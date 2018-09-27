@@ -1,0 +1,13 @@
+{
+    "public": {
+        "ga": {
+            "account": "UA-XXXXXXXX-X"
+        },
+        "url": "https://spyfall.eu.meteorapp.com/"
+    },
+    "galaxy.meteor.com": {
+     "env": {
+       "MONGO_URL": "mongodb://teofre03:spyfall1@ds115193.mlab.com:15193/spyfall"
+     }
+   }
+}
