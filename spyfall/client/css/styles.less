@@ -66,7 +66,7 @@ h5 {
     -moz-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    min-height: 100vh;
+    margin-top: 40px;
 }
 
 .main-content {
@@ -132,14 +132,13 @@ a {
 .access-code {
     text-align: center;
     margin-top: -15px;
-
-    color: #666;
+    color: white;
 }
 
 .access-code span {
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
     font-size: 1.2em;
-    color: black;
+    color: white;
 }
 
 .access-buttons {
@@ -164,7 +163,8 @@ a {
     text-decoration: none;
     position: relative;
     top: 2px;
-    color: #555;
+    color: white;
+    font-size: 18px;
     padding: 5px;
 }
 
@@ -180,18 +180,21 @@ a {
 .qrcode {
     margin-top: 40px;
     text-align: center;
+    padding-top: 10px;
+    background-color: white;
+    border-radius: 40px;
 }
 
 .access-link {
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
     text-align: center;
-    margin-top: 0;
+    margin-top: 15px;
     margin-bottom: -5px;
     font-size: 13px;
 }
 
 .access-link a {
-    color: black;
+    color: white;
 }
 
 .lobby-player-list {
@@ -200,6 +203,7 @@ a {
     counter-reset:li; /* Initiate a counter */
     margin-left:0; /* Remove the default left margin */
     padding-left:0; /* Remove the default left padding */
+    color: black;
 }
 
 .lobby-player-list > li {
@@ -243,11 +247,11 @@ a {
 }
 
 .game-countdown {
-    color: #333;
+    color: white;
     text-decoration: none;
 
     &:active, &:focus, &:hover {
-        color: #333;
+        color: white;
     }
 
     &.paused {
@@ -370,9 +374,11 @@ a {
     -webkit-box-sizing:border-box;
     box-sizing:border-box;
     list-style-type: none;
-    background-color: #f9f9f9;
+    background-color: transparent;
     margin: 0 0 4px 0;
     cursor: pointer;
+    border: white 1px solid;
+    border-radius: 10px;
 }
 
 .location-list li .location-name {
@@ -403,15 +409,19 @@ a {
 }
 
 .ingame-player-list li .player-name {
-    background-color: #f9f9f9;
+    background-color: transparent;
     padding: 3px 10px;
+    border: white 1px solid;
+    border-radius: 10px;
 }
 
 .ingame-player-list li .player-name-striked {
-    background-color: #f9f9f9;
+    background-color: transparent;
     padding: 3px 10px;
     color: #bbb;
     text-decoration: line-through;
+    border: white 1px solid;
+    border-radius: 10px;
 }
 
 .first-player-indicator {
@@ -441,10 +451,12 @@ input[type="text"] {
     width: 100%;
     max-width: 280px;
     height: 48px;
+    color: black;
   }
 
 .round-length[type="text"] {
     width: 50px;
+    color: black;
 }
 
 @media (max-width: 340px) {

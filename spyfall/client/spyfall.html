@@ -28,12 +28,8 @@
 
 <template name="startMenu">
   <div class="main-menu">
-    <h4>{{_ "ui.welcome to spyfall" }}</h4>
 
-    <img style="
-    height: 200px;
-    width: auto;
-" src="https://www.goblins.net/files/styles/zoom/public/images/game/bgg/spyfall.jpg?itok=usE2F_4j">
+    <img style="height: 200px; width: auto; border-radius: 33px;" src="https://www.goblins.net/files/styles/zoom/public/images/game/bgg/spyfall.jpg?itok=usE2F_4j" title="{{_ "ui.welcome to spyfall" }}">
 
     <hr>
 
@@ -188,7 +184,7 @@
     {{#if isLoading }}
       <span class="spinner"></span>
     {{else}}
-      {{_ "ui.welcome to spyfall" }}
+      {{_ "ui.welcome to spyfall" }} - Nuova partita
     {{/if}}
   </h4>
 

@@ -1,6 +1,6 @@
 {
     "ui": {
-        "welcome to spyfall": "Benvenuto in Spyfall",
+        "welcome to spyfall": "Spyfall",
         "new game": "Nuova Partita",
         "join game": "Unisciti A Una Partita",
         "waiting for players": "Aspettando Altri Giocatori...",
@@ -15,7 +15,7 @@
         "your role": "Il tuo ruolo",
         "players": "Giocatori",
         "first": "Primo",
-        "location reference": "Codice posizione",
+        "location reference": "Ambientazioni",
         "end game": "Fine Gioco",
         "enter your name": "Digita il tuo nome",
         "create game": "Crea",
