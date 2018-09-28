@@ -96,7 +96,13 @@ Games.find({"state": 'settingUp'}).observeChanges({
     var players = Players.find({gameID: id});
     var gameEndTime = moment().add(game.lengthInMinutes, 'minutes').valueOf();
 
-    var spyIndex = Math.floor(Math.random() * players.count());
+    var spyIndex = 0;
+    if(players.count() <= 3){
+        spyIndex = Math.floor(Math.random() * (players.count() + 1));
+    } else {
+        spyIndex = Math.floor(Math.random() * players.count());
+    }
+
     var firstPlayerIndex = Math.floor(Math.random() * players.count());
 
     players.forEach(function(player, index){
