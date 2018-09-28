@@ -45,6 +45,22 @@ function getLanguageDirection() {
   }
 }
 
+function getAllLocations() {
+    return locations.concat(locations2).concat(locations3);
+}
+
+function getLocations1() {
+    return locations;
+}
+
+function getLocations2() {
+    return locations2;
+}
+
+function getLocations3() {
+    return locations3;
+}
+
 function getLanguageList() {
   var languages = TAPi18n.getLanguages();
   var languageList = _.map(languages, function(value, key) {
@@ -244,7 +260,11 @@ Template.main.helpers({
 });
 
 Template.footer.helpers({
-  languages: getLanguageList
+  languages: getLanguageList(),
+  locations: getAllLocations(),
+  location1: getLocations1(),
+  location2: getLocations2(),
+  location3: getLocations3()
 })
 
 Template.footer.events({
@@ -257,6 +277,9 @@ Template.footer.events({
     var language = event.target.value;
     setUserLanguage(language);
     GAnalytics.event("language-actions", "set-language-" + language);
+  },
+  'click .btn-toggle-location': function () {
+    $(".location-container-content").toggle();
   }
 })
 

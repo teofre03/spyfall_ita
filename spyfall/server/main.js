@@ -29,7 +29,6 @@ function getRandomLocation(locationOption){
   }
 
   // use both locations
-  var allLocations = locations.concat(locations2).concat(locations3);
   var allIndex = Math.floor(Math.random() * allLocations.length);
   return allLocations[allIndex];
 }

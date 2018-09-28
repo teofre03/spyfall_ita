@@ -29,7 +29,12 @@ locations3 = [
         name: 'locations.trans dating house',
         roles: [
             'locations.roles.trans dating house.little trans',
-            'locations.roles.red light cinema.politician'
+            'locations.roles.trans dating house.politician',
+            'locations.roles.trans dating house.policeman',
+            'locations.roles.trans dating house.brasilian',
+            'locations.roles.trans dating house.histeric',
+            'locations.roles.trans dating house.protector',
+            'locations.roles.trans dating house.premier'
         ]
     }
 ];

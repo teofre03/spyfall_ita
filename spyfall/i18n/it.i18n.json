@@ -2,13 +2,13 @@
     "ui": {
         "welcome to spyfall": "Spyfall",
         "new game": "Nuova Partita",
-        "join game": "Unisciti A Una Partita",
+        "join game": "Unisciti Ad Una Partita",
         "waiting for players": "Aspettando Altri Giocatori...",
         "access code": "Codice D'Accesso",
         "join my spyfall game": "Unisciti Alla Mia Partita Di Spyfall!",
         "start game": "Inizia Partita",
         "leave game": "Abbandona Partita",
-        "show hide": "mostra/nascondi",
+        "show hide": "Mostra/Nascondi",
         "you are the spy": "Sei la Spia!",
         "you are not the spy": "Non sei la spia!",
         "the location": "Il Luogo",
@@ -53,7 +53,7 @@
         "supermarket": "Supermercato",
         "theater": "Teatro",
         "university": "Università",
-        "world war ii squad": "Squadra della Seconda Guerra Mondiale",
+        "world war ii squad": "Accampamento militare della Seconda Guerra Mondiale",
         "race track": "Pista da corsa",
         "art museum": "Museo d'arte",
         "vineyard": "Vigneto",
@@ -520,7 +520,12 @@
             },
             "trans dating house": {
                 "little trans": "Trans poco dotato",
-                "politician": "Politico"
+                "politician": "Politico",
+                "policeman": "Poliziotto",
+                "brasilian": "Trans brasiliano",
+                "protector": "Protettore",
+                "histeric": "Trans isterico",
+                "premier": "Presidente del consiglio"
             }
         }
     }

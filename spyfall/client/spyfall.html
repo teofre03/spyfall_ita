@@ -19,7 +19,7 @@
     <div class="main-content">
       {{> Template.dynamic template=whichView}}
 
-      <hr>
+      <hr class="line-short">
 
       {{> footer }}
     </div>
@@ -249,10 +249,36 @@
 
 <template name="footer">
   <div class="footer">
-    <a href="/spyfall_regole.pdf" target="_blank" style="font-size: 15px;">
-        Regole ufficiali
+    <div class="location-container">
+
+        <span style="color: white; font-size: 17px;">Lista ambientazioni</span>
+
+        <button class="btn-toggle-location">{{_ "ui.show hide" }}</button>
+
+        <div class="location-container-content" style="display: none;">
+            <label style="font-size: 14px;">Spyfall 1:</label>
+            {{#each location1 }}
+                <div class="location-name">{{_ name }}</div>
+            {{/each}}
+            <br>
+            <label style="font-size: 14px;">Spyfall 2:</label>
+            {{#each location2 }}
+                <div class="location-name">{{_ name }}</div>
+            {{/each}}
+            <br>
+            <label style="font-size: 14px;">Spyfall 3:</label>
+            {{#each location3 }}
+                <div class="location-name">{{_ name }}</div>
+            {{/each}}
+        </div>
+    </div>
+
+    <hr class="line-short-equals">
+
+    <a href="/spyfall_regole.pdf" target="_blank" style="font-size: 15px; color:white;">
+        Regole ufficiali <i class="fa fa-download"></i>
     </a>
-    <br>
+    <br><br>
     {{{_ "ui.footer" }}}
   </div>
 </template>

@@ -80,6 +80,7 @@ h5 {
 
 a {
     color: #999;
+    text-decoration: none;
 }
 
 .alert {
@@ -318,6 +319,17 @@ a {
     margin-bottom: 10px;
 }
 
+.location-container {
+    position: relative;
+    min-height: 14px;
+    margin-bottom: 3rem;
+}
+
+.location-container-content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .btn-toggle-status {
     position: absolute;
     top: -5px;
@@ -328,7 +340,34 @@ a {
     border: none;
     font-size: 10px;
     text-transform: none;
-    color: #999;
+    color: white !important;
+}
+
+.btn-toggle-location {
+    position: absolute;
+    top: -12px;
+    right: -10px;
+    padding: 2px 10px;
+    line-height: 1em;
+    height: 23px;
+    border: none;
+    font-size: 9px;
+    text-transform: none;
+    color: white !important;
+}
+
+.line-short {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    border-width: 0;
+    border-top: 1px solid #E1E1E1;
+}
+
+.line-short-equals {
+    margin-top: -1.5rem;
+    margin-bottom: 1.5rem;
+    border-width: 0;
+    border-top: 1px solid #E1E1E1;
 }
 
 .current-location {
