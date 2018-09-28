@@ -28,7 +28,13 @@ function getRandomLocation(locationOption){
       return locations3[locationIndex3];
   }
 
+  if(locationOption === "nsfw") {
+      var nsfwIndex = Math.floor(Math.random() * nsfw.length);
+      return nsfw[nsfwIndex];
+  }
+
   // use both locations
+  var allLocations = locations.concat(locations2).concat(locations3);
   var allIndex = Math.floor(Math.random() * allLocations.length);
   return allLocations[allIndex];
 }

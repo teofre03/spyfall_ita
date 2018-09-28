@@ -46,7 +46,7 @@ function getLanguageDirection() {
 }
 
 function getAllLocations() {
-    return locations.concat(locations2).concat(locations3);
+    return locations.concat(locations2).concat(locations3).concat(nsfw);
 }
 
 function getLocations1() {
@@ -59,6 +59,10 @@ function getLocations2() {
 
 function getLocations3() {
     return locations3;
+}
+
+function getNsfw() {
+    return nsfw;
 }
 
 function getLanguageList() {
@@ -128,7 +132,14 @@ function generateAccessCode(){
     return code;
 }
 
-function generateNewGame(locationOption, roundMinutes){
+function generateNewGame(locationOption, roundMinutes, nsfw){
+    console.log(locationOption);
+  if(locationOption === ""){
+    if(nsfw === true)
+        locationOption = "nsfw";
+    else
+        locationOption = "locationBoth";
+  }
   var game = {
     accessCode: generateAccessCode(),
     state: "waitingForPlayers",
@@ -137,7 +148,8 @@ function generateNewGame(locationOption, roundMinutes){
     endTime: null,
     paused: false,
     pausedTime: null,
-    locationOption: locationOption
+    locationOption: locationOption,
+    nsfw: nsfw
   };
 
   var gameID = Games.insert(game);
@@ -264,7 +276,8 @@ Template.footer.helpers({
   locations: getAllLocations(),
   location1: getLocations1(),
   location2: getLocations2(),
-  location3: getLocations3()
+  location3: getLocations3(),
+  nsfw: getNsfw()
 })
 
 Template.footer.events({
@@ -317,7 +330,7 @@ Template.createGame.events({
       return false;
     }
 
-    var game = generateNewGame(event.target.locationRadio.value, event.target.roundMinutes.value);
+    var game = generateNewGame(event.target.locationRadio.value, event.target.roundMinutes.value, event.target.nsfw.checked);
     var player = generateNewPlayer(game, playerName);
 
     Meteor.subscribe('games', game.accessCode);
@@ -520,16 +533,39 @@ Template.gameView.helpers({
     return players;
   },
   locations: function () {
+      var selected = null;
 	  if (getCurrentGame().locationOption === "location1") {
-	    return locations;
+	    selected = locations;
 	  }
 	  if(getCurrentGame().locationOption === "location2") {
-	    return locations2;
+	    selected = locations2;
 	  }
 	  if(getCurrentGame().locationOption === "location3") {
-	    return locations3;
+	    selected = locations3;
       }
-      return locations.concat(locations2).concat(locations3);
+      if(getCurrentGame().nsfw === true) {
+        if(selected != null){
+            selected = selected.concat(nsfw);
+            selected.sort(function(a, b){
+                var keyA = a.translation != '' ? a.translation : a.name,
+                    keyB = b.translation != '' ? b.translation : b.name;
+                if(keyA < keyB) return -1;
+                if(keyA > keyB) return 1;
+                return 0;
+            });
+            return selected;
+        }
+        return nsfw;
+      }
+      selected = locations.concat(locations2).concat(locations3).concat(nsfw);
+      selected.sort(function(a, b){
+                var keyA = a.translation != '' ? a.translation : a.name,
+                    keyB = b.translation != '' ? b.translation : b.name;
+                if(keyA < keyB) return -1;
+                if(keyA > keyB) return 1;
+                return 0;
+            });
+      return selected;
   },
   gameFinished: function () {
     var timeRemaining = getTimeRemaining();

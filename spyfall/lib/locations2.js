@@ -1,7 +1,8 @@
 locations2 = [
 	{
 		name: 'locations.race track',
-		roles: [
+		translation: 'Pista da corsa',
+        roles: [
 			'locations.roles.race track.team owner',
 			'locations.roles.race track.driver',
 			'locations.roles.race track.engineer',
@@ -16,7 +17,8 @@ locations2 = [
 	},
 	{
 		name: 'locations.art museum',
-		roles: [
+		translation: 'Museo d\'arte',
+        roles: [
 			'locations.roles.art museum.ticket seller',
 			'locations.roles.art museum.student',
 			'locations.roles.art museum.visitor',
@@ -31,7 +33,8 @@ locations2 = [
 	},
 	{
 		name: 'locations.vineyard',
-		roles: [
+		translation: 'Vigneto',
+        roles: [
 			'locations.roles.vineyard.gardener',
 			'locations.roles.vineyard.gourmet guide',
 			'locations.roles.vineyard.winemaker',
@@ -46,7 +49,8 @@ locations2 = [
 	},
 	{
 		name: 'locations.library',
-		roles: [
+		translation: 'Biblioteca',
+        roles: [
 			'locations.roles.library.old man',
 			'locations.roles.library.journalist',
 			'locations.roles.library.author',
@@ -61,7 +65,8 @@ locations2 = [
 	},
 	{
 		name: 'locations.retirement home',
-		roles: [
+		translation: 'Casa di riposo',
+        roles: [
 			'locations.roles.retirement home.relative',
 			'locations.roles.retirement home.cribbage player',
 			'locations.roles.retirement home.old person',
@@ -76,7 +81,8 @@ locations2 = [
 	},
 	{
 		name: 'locations.jail',
-		roles: [
+		translation: 'Prigione',
+        roles: [
 			'locations.roles.jail.wrongly accused man',
 			'locations.roles.jail.cctv operator',
 			'locations.roles.jail.guard',
@@ -91,7 +97,8 @@ locations2 = [
 	},
 	{
 		name: 'locations.construction site',
-		roles: [
+		translation: 'Cantiere',
+        roles: [
 			'locations.roles.construction site.free-roaming toddler',
 			'locations.roles.construction site.contractor',
 			'locations.roles.construction site.crane driver',
@@ -106,7 +113,8 @@ locations2 = [
 	},
 	{
 		name: 'locations.candy factory',
-		roles: [
+		translation: 'Fabbrica di caramelle',
+        roles: [
 			'locations.roles.candy factory.candy maker',
 			'locations.roles.candy factory.pastry chef',
 			'locations.roles.candy factory.visitor',
@@ -116,12 +124,13 @@ locations2 = [
 			'locations.roles.candy factory.packager',
 			'locations.roles.candy factory.inspector',
 			'locations.roles.candy factory.machine operator',
-			'locations.roles.candy factory.janitor',
+			'locations.roles.candy factory.janitor'
 		]
 	},
 	{
 		name: 'locations.subway',
-		roles: [
+		translation: 'Metropolitana',
+        roles: [
 			'locations.roles.subway.tourist',
 			'locations.roles.subway.subway operator',
 			'locations.roles.subway.ticket inspector',
@@ -132,11 +141,13 @@ locations2 = [
 			'locations.roles.subway.ticket seller',
 			'locations.roles.subway.old lady',
 			'locations.roles.subway.blind man',
+            'locations.roles.subway.rom woman'
 		]
 	},
 	{
 		name: 'locations.coal mine',
-		roles: [
+		translation: 'Miniera di carbone',
+        roles: [
 			'locations.roles.coal mine.safety inspector',
 			'locations.roles.coal mine.miner',
 			'locations.roles.coal mine.overseer',
@@ -150,7 +161,8 @@ locations2 = [
 	},
 	{
 		name: 'locations.cemetery',
-		roles: [
+		translation: 'Cimitero',
+        roles: [
 			'locations.roles.cemetery.priest',
 			'locations.roles.cemetery.grave robber',
 			'locations.roles.cemetery.poet',
@@ -165,7 +177,8 @@ locations2 = [
 	},
 	{
 		name: 'locations.rock concert',
-		roles: [
+		translation: 'Concerto rock',
+        roles: [
 			'locations.roles.rock concert.dancer',
 			'locations.roles.rock concert.singer',
 			'locations.roles.rock concert.fan',
@@ -180,7 +193,8 @@ locations2 = [
 	},
 	{
 		name: 'locations.jazz club',
-		roles: [
+		translation: 'Jazz Club',
+        roles: [
 			'locations.roles.jazz club.bouncer',
 			'locations.roles.jazz club.drummer',
 			'locations.roles.jazz club.pianist',
@@ -195,7 +209,8 @@ locations2 = [
 	},
 	{
 		name: 'locations.wedding',
-		roles: [
+		translation: 'Matrimonio',
+        roles: [
 			'locations.roles.wedding.ring bearer',
 			'locations.roles.wedding.groom',
 			'locations.roles.wedding.bride',
@@ -211,7 +226,8 @@ locations2 = [
 	},
 	{
 		name: 'locations.gas station',
-		roles: [
+		translation: 'Benzinaio',
+        roles: [
 			'locations.roles.gas station.car enthusiast',
 			'locations.roles.gas station.service attendant',
 			'locations.roles.gas station.service attendant',
@@ -226,7 +242,8 @@ locations2 = [
 	},
 	{
 		name: 'locations.sightseeing bus',
-		roles: [
+		translation: 'Autobus turistico',
+        roles: [
 			'locations.roles.sightseeing bus.old man',
 			'locations.roles.sightseeing bus.lone tourist',
 			'locations.roles.sightseeing bus.driver',

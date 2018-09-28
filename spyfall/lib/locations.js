@@ -1,6 +1,7 @@
 locations = [
   {
     name: 'locations.airplane',
+    translation: 'Aereoplano',
     roles: [
       'locations.roles.airplane.first class passenger',
       'locations.roles.airplane.air marshall',
@@ -13,6 +14,7 @@ locations = [
   },
   {
     name: 'locations.bank',
+    translation: 'Banca',
     roles: [
       'locations.roles.bank.armored car driver',
       'locations.roles.bank.manager',
@@ -25,6 +27,7 @@ locations = [
   },
   {
     name: 'locations.beach',
+    translation: 'Spiaggia',
     roles: [
       'locations.roles.beach.beach waitress',
       'locations.roles.beach.kite surfer',
@@ -37,6 +40,7 @@ locations = [
   },
   {
     name: 'locations.cathedral',
+    translation: 'Cattedrale',
     roles: [
       'locations.roles.cathedral.priest',
       'locations.roles.cathedral.beggar',
@@ -49,6 +53,7 @@ locations = [
   },
   {
     name: 'locations.circus tent',
+    translation: 'Tenda Del Circo',
     roles: [
       'locations.roles.circus tent.acrobat',
       'locations.roles.circus tent.animal trainer',
@@ -61,6 +66,7 @@ locations = [
   },
   {
     name: 'locations.corporate party',
+    translation: 'Festa Aziendale',
     roles: [
       'locations.roles.corporate party.entertainer',
       'locations.roles.corporate party.manager',
@@ -73,6 +79,7 @@ locations = [
   },
   {
     name: 'locations.crusader army',
+    translation: 'Esercito Dei Crociati',
     roles: [
       'locations.roles.crusader army.monk',
       'locations.roles.crusader army.imprisoned saracen',
@@ -85,6 +92,7 @@ locations = [
   },
   {
     name: 'locations.casino',
+    translation: 'Casinò',
     roles: [
       'locations.roles.casino.bartender',
       'locations.roles.casino.head security guard',
@@ -97,6 +105,7 @@ locations = [
   },
   {
     name: 'locations.day spa',
+    translation: 'Centro Benessere',
     roles: [
       'locations.roles.day spa.stylist',
       'locations.roles.day spa.masseuse',
@@ -109,6 +118,7 @@ locations = [
   },
   {
     name: 'locations.embassy',
+    translation: 'Ambasciata',
     roles: [
       'locations.roles.embassy.security guard',
       'locations.roles.embassy.secretary',
@@ -121,6 +131,7 @@ locations = [
   },
   {
     name: 'locations.hospital',
+    translation: 'Ospedale',
     roles: [
       'locations.roles.hospital.nurse',
       'locations.roles.hospital.doctor',
@@ -133,6 +144,7 @@ locations = [
   },
   {
     name: 'locations.hotel',
+    translation: 'Hotel',
     roles: [
       'locations.roles.hotel.doorman',
       'locations.roles.hotel.security guard',
@@ -145,6 +157,7 @@ locations = [
   },
   {
     name: 'locations.military base',
+    translation: 'Base MIlitare',
     roles: [
       'locations.roles.military base.deserter',
       'locations.roles.military base.colonel',
@@ -157,6 +170,7 @@ locations = [
   },
   {
     name: 'locations.movie studio',
+    translation: 'Studio Televisivo',
     roles: [
       'locations.roles.movie studio.stunt man',
       'locations.roles.movie studio.sound engineer',
@@ -169,6 +183,7 @@ locations = [
   },
   {
     name: 'locations.ocean liner',
+    translation: 'Transatlantico',
     roles: [
       'locations.roles.ocean liner.cook',
       'locations.roles.ocean liner.captain',
@@ -181,6 +196,7 @@ locations = [
   },
   {
     name: 'locations.passenger train',
+    translation: 'Treno Passeggeri',
     roles: [
       'locations.roles.passenger train.mechanic',
       'locations.roles.passenger train.border patrol',
@@ -193,6 +209,7 @@ locations = [
   },
   {
     name: 'locations.pirate ship',
+    translation: 'Nave Pirata',
     roles: [
       'locations.roles.pirate ship.cook',
       'locations.roles.pirate ship.slave',
@@ -205,6 +222,7 @@ locations = [
   },
   {
     name: 'locations.polar station',
+    translation: 'Stazione Polare',
     roles: [
       'locations.roles.polar station.medic',
       'locations.roles.polar station.expedition leader',
@@ -217,6 +235,7 @@ locations = [
   },
   {
     name: 'locations.police station',
+    translation: 'Stazione di Polizia',
     roles: [
       'locations.roles.police station.detective',
       'locations.roles.police station.lawyer',
@@ -229,6 +248,7 @@ locations = [
   },
   {
     name: 'locations.restaurant',
+    translation: 'Ristorante',
     roles: [
       'locations.roles.restaurant.musician',
       'locations.roles.restaurant.bouncer',
@@ -241,6 +261,7 @@ locations = [
   },
   {
     name: 'locations.school',
+    translation: 'Scuola',
     roles: [
       'locations.roles.school.gym teacher',
       'locations.roles.school.principal',
@@ -253,6 +274,7 @@ locations = [
   },
   {
     name: 'locations.service station',
+    translation: 'Stazione di Servizio',
     roles: [
       'locations.roles.service station.manager',
       'locations.roles.service station.tire specialist',
@@ -265,6 +287,7 @@ locations = [
   },
   {
     name: 'locations.space station',
+    translation: 'Stazione Spaziale',
     roles: [
       'locations.roles.space station.engineer',
       'locations.roles.space station.alien',
@@ -277,6 +300,7 @@ locations = [
   },
   {
     name: 'locations.submarine',
+    translation: 'Sottomarino',
     roles: [
       'locations.roles.submarine.cook',
       'locations.roles.submarine.commander',
@@ -289,6 +313,7 @@ locations = [
   },
   {
     name: 'locations.supermarket',
+    translation: 'Supermercato',
     roles: [
       'locations.roles.supermarket.cashier',
       'locations.roles.supermarket.butcher',
@@ -301,6 +326,7 @@ locations = [
   },
   {
     name: 'locations.theater',
+    translation: 'Teatro',
     roles: [
       'locations.roles.theater.coat check lady',
       'locations.roles.theater.prompter',
@@ -313,6 +339,7 @@ locations = [
   },
   {
     name: 'locations.university',
+    translation: 'Università',
     roles: [
       'locations.roles.university.graduate student',
       'locations.roles.university.professor',
@@ -325,6 +352,7 @@ locations = [
   },
   {
     name: 'locations.world war ii squad',
+    translation: 'Accampamento militare della Seconda Guerra Mondiale',
     roles: [
       'locations.roles.world war ii squad.resistance fighter',
       'locations.roles.world war ii squad.radioman',

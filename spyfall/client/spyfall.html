@@ -195,7 +195,7 @@
       <input type="text" id="player-name" name="playerName" placeholder='{{_ "ui.enter your name" }}'>
         <br>
         <label for="location1">
-            <input type="radio" id="location1" name="locationRadio" value="location1" checked="checked">
+            <input type="radio" id="location1" name="locationRadio" value="location1">
             Usa le ambientazioni Spyfall 1
         </label>
         <label for="location2">
@@ -204,11 +204,15 @@
         </label>
         <label for="location3">
             <input type="radio" id="location3" name="locationRadio" value="location3">
-            Usa le ambientazioni Spyfall 3 (NSFW)
+            Usa le ambientazioni Spyfall 3 (Viaggi nel tempo)
         </label>
         <label for="locationBoth">
             <input type="radio" id="locationBoth" name="locationRadio" value="locationBoth">
-            Usa tutte le ambientazioni
+            Usa le ambientazioni Spyfall 1-2-3
+        </label>
+        <label for="nsfw">
+            <input type="checkbox" id="nsfw" name="nsfw" value="nsfw">
+            Usa le ambientazioni Spyfall NSFW
         </label>
         <label for="round-minutes">
         Durata round (in minuti): <input class="round-length" type="text" id="round-minutes" name="roundMinutes" value="8" size="2" maxlength="2">
@@ -268,6 +272,11 @@
             <br>
             <label style="font-size: 14px;">Spyfall 3:</label>
             {{#each location3 }}
+                <div class="location-name">{{_ name }}</div>
+            {{/each}}
+            <br>
+            <label style="font-size: 14px;">Spyfall NSFW:</label>
+            {{#each nsfw }}
                 <div class="location-name">{{_ name }}</div>
             {{/each}}
         </div>

@@ -23,7 +23,7 @@
         "enter an access code": "Digita un codice d'accesso",
         "invalid access code": "Errore, nessun gioco trovato con il codice che hai digitato!",
         "join": "Unisciti",
-        "footer": "<a href='http://international.hobbyworld.ru/catalog/25-spyfall/' target='_blank'>Spyfall</a> creato da Alexandr Ushan, pubblicato da <a href='http://international.hobbyworld.ru/' target='_blank'>Hobby World</a>"
+        "footer": "<a href='https://www.dvgiochi.com/catalogo/spyfall/' target='_blank'>Spyfall</a> creato da Alexandr Ushan, pubblicato da <a href='http://international.hobbyworld.ru/' target='_blank'>Hobby World</a>"
     },
     "locations": {
         "airplane": "Aereoplano",
@@ -57,7 +57,7 @@
         "race track": "Pista da corsa",
         "art museum": "Museo d'arte",
         "vineyard": "Vigneto",
-        "library": "Libreria",
+        "library": "Biblioteca",
         "retirement home": "Casa di riposo",
         "jail": "Prigione",
         "construction site": "Cantiere",
@@ -73,6 +73,8 @@
         "night club": "Night club",
         "red light cinema": "Cinema a luci rosse",
         "trans dating house": "Casa d'appuntamenti per andare a trans",
+        "alcool party": "Party alcolico",
+        "leonard studio": "Lo studio di Leonardo da Vinci",
         "roles": {
             "airplane": {
                 "first class passenger": "Passeggero di Prima Classe",
@@ -407,96 +409,97 @@
                 "construction worker": "Operaio edile"
             },
             "candy factory": {
-                "candy maker": "Candy Maker",
-                "pastry chef": "Pastry Chef",
-                "visitor": "Visitor",
-                "taster": "Taster",
-                "truffle maker": "Truffle Maker",
-                "supply worker": "Supply Worker",
-                "packager": "Packager",
-                "inspector": "Inspector",
-                "machine operator": "Machine Operator",
-                "janitor": "Janitor"
+                "candy maker": "Fabbricatore di caramelle",
+                "pastry chef": "Pasticcere",
+                "visitor": "Visitatore",
+                "taster": "Assaggiatore",
+                "truffle maker": "Addetto al caramello",
+                "supply worker": "Operaio",
+                "packager": "Impacchettatore",
+                "inspector": "Ispettore",
+                "machine operator": "Addetto alla manutenzione dei macchinari",
+                "janitor": "Genitore"
             },
             "subway": {
-                "tourist": "Tourist",
-                "subway operator": "Subway Operator",
-                "ticket inspector": "Ticket Inspector",
-                "pregnant lady": "Pregnant Lady",
-                "pickpocket": "Pickpocket",
-                "cleaner": "Cleaner",
-                "businessman": "Businessman",
-                "ticket seller": "Ticket Seller",
-                "old lady": "Old Lady",
-                "blind man": "Blind Man"
+                "tourist": "Turista",
+                "subway operator": "Macchinista",
+                "ticket inspector": "Controllore",
+                "pregnant lady": "Donna con bambino che elemosina",
+                "pickpocket": "Borseggiatore",
+                "cleaner": "Spazzino",
+                "businessman": "Uomo d'affari",
+                "ticket seller": "Bigliettaio",
+                "old lady": "Donna anziana",
+                "blind man": "Uomo cieco che elemosina",
+                "rom woman": "Zingara"
             },
             "coal mine": {
-                "safety inspector": "Safety Inspector",
-                "miner": "Miner",
-                "overseer": "Overseer",
-                "dump truck operator": "Dump Truck Operator",
-                "driller": "Driller",
-                "coordinator": "Coordinator",
-                "blasting engineer": "Blasting Engineer",
-                "solid waste engineer": "Solid Waste Engineer",
-                "worker": "Worker"
+                "safety inspector": "Ispettore della sicurezza",
+                "miner": "Minatore",
+                "overseer": "Sopraintendente",
+                "dump truck operator": "Autista del camion della spazzatura",
+                "driller": "Trapanista",
+                "coordinator": "Coordinatore",
+                "blasting engineer": "Demolitore",
+                "solid waste engineer": "Ingegnere dei rifiuti solidi",
+                "worker": "Operaio"
             },
             "rock concert": {
-                "dancer": "Dancer",
-                "singer": "Singer",
+                "dancer": "Ballerino",
+                "singer": "Cantante",
                 "fan": "Fan",
-                "guitarist": "Guitarist",
-                "drummer": "Drummer",
-                "roadie": "Roadie",
-                "stage diver": "Stage Diver",
-                "security guard": "Security Guard",
-                "bassist": "Bassist",
-                "sound technician": "Sound Technician"
+                "guitarist": "Chitarrista",
+                "drummer": "Batterista",
+                "roadie": "Tecnico delle luci",
+                "stage diver": "Tuffatore dal palco",
+                "security guard": "Guardia di sicurezza",
+                "bassist": "Bassista",
+                "sound technician": "Tecnico del suono"
             },
             "jazz club": {
-                "bouncer": "Bouncer",
-                "drummer": "Drummer",
-                "pianist": "Pianist",
-                "saxophonist": "Saxophonist",
-                "singer": "Singer",
-                "jazz fanatic": "Jazz Fanatic",
-                "dancer": "Dancer",
+                "bouncer": "Buttafuori",
+                "drummer": "Batterista",
+                "pianist": "Pianista",
+                "saxophonist": "Sassofonista",
+                "singer": "Cantante",
+                "jazz fanatic": "Appassionato di Jazz",
+                "dancer": "Ballerina",
                 "barman": "Barman",
                 "vip": "VIP",
-                "waiter": "Waiter"
+                "waiter": "Cameriere"
             },
             "wedding": {
-                "ring bearer": "Ring Bearer",
-                "groom": "Groom",
-                "bride": "Bride",
-                "officiant": "Officiant",
-                "photographer": "Photographer",
-                "flower girl": "Flower Girl",
-                "father of the bride": "Father of the Bride",
-                "wedding crasher": "Wedding Crasher",
-                "best man": "Best Man",
-                "maid of honor": "Maid of Honor",
-                "relative": "Relative"
+                "ring bearer": "Damigella",
+                "groom": "Sposo",
+                "bride": "Sposa",
+                "officiant": "Prete",
+                "photographer": "Fotografo",
+                "flower girl": "Imbucato",
+                "father of the bride": "Padre della sposa",
+                "wedding crasher": "Rovina matrimoni",
+                "best man": "Testimone",
+                "maid of honor": "Damigella d'onore",
+                "relative": "Parente"
             },
             "gas station": {
                 "car enthusiast": "Appassionato di macchine",
-                "service attendant": "Service Attendant",
-                "shopkeeper": "Shopkeeper",
-                "customer": "Customer",
-                "car washer": "Car Washer",
-                "cashier": "Cashier",
-                "climate change activist": "Climate Change Activist",
-                "manager": "Manager"
+                "service attendant": "Assistente di servizio",
+                "shopkeeper": "Negoziante",
+                "customer": "Cliente",
+                "car washer": "Lavavetri",
+                "cashier": "Cassiere",
+                "climate change activist": "Attivista per il cambiamento climatico",
+                "manager": "Gestore"
             },
             "sightseeing bus": {
-                "old man": "Old Man",
-                "lone tourist": "Lone Tourist",
-                "driver": "Driver",
-                "annoying child": "Annoying Child",
-                "tourist": "Tourist",
-                "tour guide": "Tour Guide",
-                "photographer": "Photographer",
-                "lost person": "Lost Person"
+                "old man": "Uomo vecchio",
+                "lone tourist": "Turista solitario",
+                "driver": "Autista",
+                "annoying child": "Bambino fastidioso",
+                "tourist": ">Turista",
+                "tour guide": "Guida turistica",
+                "photographer": "Fotografo",
+                "lost person": "Persona spaesata"
             },
             "night club": {
                 "stripper": "Spogliarellista",
@@ -526,6 +529,15 @@
                 "protector": "Protettore",
                 "histeric": "Trans isterico",
                 "premier": "Presidente del consiglio"
+            },
+            "alcool party": {
+                "barman": "Addetto agli alcolici",
+                "sexy teen": "Ragazza facile",
+                "drunkard": "Ubriaco molesto",
+                "virgin": "Quello vergine",
+                "weedman": "Fattone",
+                "nerd": "Nerd",
+                "beer pong player": "Giocatore di beer pong"
             }
         }
     }
