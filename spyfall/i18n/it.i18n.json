@@ -538,6 +538,15 @@
                 "weedman": "Fattone",
                 "nerd": "Nerd",
                 "beer pong player": "Giocatore di beer pong"
+            },
+            "leonard studio": {
+                "leonardo": "Leonardo da Vinci",
+                "verrocchio": "Andrea del Verrocchio",
+                "lorenzo": "Lorenzo il magnifico",
+                "macchiavelli": "Niccolò Machiavelli",
+                "borgia": "Cesare Borgia",
+                "michelangelo": "Michelangelo Buonarroti",
+                "ludovico": "Ludovico il Moro"
             }
         }
     }
