@@ -50,19 +50,51 @@ function getAllLocations() {
 }
 
 function getLocations1() {
+    var selected = locations;
+    selected.sort(function(a, b){
+                var keyA = a.translation != '' ? a.translation : a.name,
+                    keyB = b.translation != '' ? b.translation : b.name;
+                if(keyA < keyB) return -1;
+                if(keyA > keyB) return 1;
+                return 0;
+            });
     return locations;
 }
 
 function getLocations2() {
+    var selected = locations2;
+    selected.sort(function(a, b){
+                var keyA = a.translation != '' ? a.translation : a.name,
+                    keyB = b.translation != '' ? b.translation : b.name;
+                if(keyA < keyB) return -1;
+                if(keyA > keyB) return 1;
+                return 0;
+            });
     return locations2;
 }
 
 function getLocations3() {
+    var selected = locations3;
+    selected.sort(function(a, b){
+                var keyA = a.translation != '' ? a.translation : a.name,
+                    keyB = b.translation != '' ? b.translation : b.name;
+                if(keyA < keyB) return -1;
+                if(keyA > keyB) return 1;
+                return 0;
+            });
     return locations3;
 }
 
 function getNsfw() {
-    return nsfw;
+    var selected = nsfw;
+    selected.sort(function(a, b){
+                var keyA = a.translation != '' ? a.translation : a.name,
+                    keyB = b.translation != '' ? b.translation : b.name;
+                if(keyA < keyB) return -1;
+                if(keyA > keyB) return 1;
+                return 0;
+            });
+    return selected;
 }
 
 function getLanguageList() {
