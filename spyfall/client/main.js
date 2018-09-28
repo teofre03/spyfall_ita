@@ -557,14 +557,16 @@ Template.gameView.helpers({
         }
         return nsfw;
       }
-      selected = locations.concat(locations2).concat(locations3).concat(nsfw);
-      selected.sort(function(a, b){
-                var keyA = a.translation != '' ? a.translation : a.name,
-                    keyB = b.translation != '' ? b.translation : b.name;
-                if(keyA < keyB) return -1;
-                if(keyA > keyB) return 1;
-                return 0;
-            });
+      if(selected == null){
+        selected = locations.concat(locations2).concat(locations3).concat(nsfw);
+        selected.sort(function(a, b){
+            var keyA = a.translation != '' ? a.translation : a.name,
+                keyB = b.translation != '' ? b.translation : b.name;
+            if(keyA < keyB) return -1;
+            if(keyA > keyB) return 1;
+            return 0;
+        });
+      }
       return selected;
   },
   gameFinished: function () {
