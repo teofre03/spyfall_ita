@@ -11,5 +11,18 @@ locations3 = [
             'locations.roles.leonard studio.michelangelo',
             'locations.roles.leonard studio.ludovico'
 		]
-	}
+	},
+    {
+        name: 'locations.pyramid',
+        translation: 'Cantiere di costruzione delle piramidi',
+        roles: [
+            'locations.roles.pyramid.faraone',
+            'locations.roles.pyramid.schiavo',
+            'locations.roles.pyramid.frustatore',
+            'locations.roles.pyramid.guardia',
+            'locations.roles.pyramid.capo cantiere',
+            'locations.roles.pyramid.operaio',
+            'locations.roles.pyramid.sacerdote'
+        ]
+    }
 ];

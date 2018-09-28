@@ -75,6 +75,7 @@
         "trans dating house": "Casa d'appuntamenti per andare a trans",
         "alcool party": "Party alcolico",
         "leonard studio": "Lo studio di Leonardo da Vinci",
+        "pyramid": "Cantiere di costruzione delle piramidi",
         "roles": {
             "airplane": {
                 "first class passenger": "Passeggero di Prima Classe",
@@ -547,6 +548,15 @@
                 "borgia": "Cesare Borgia",
                 "michelangelo": "Michelangelo Buonarroti",
                 "ludovico": "Ludovico il Moro"
+            },
+            "pyramid": {
+                "faraone": "Faraone",
+                "schiavo": "Schiavo",
+                "frustatore": "Frustatore",
+                "guardia": "Guardia",
+                "capo cantiere": "Capo cantiere",
+                "operaio": "Operaio",
+                "sacerdote": "Sacerdote"
             }
         }
     }
