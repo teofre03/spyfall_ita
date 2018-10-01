@@ -76,6 +76,24 @@
         "alcool party": "Party alcolico",
         "leonard studio": "Lo studio di Leonardo da Vinci",
         "pyramid": "Cantiere di costruzione delle piramidi",
+        "hot air balloon": "Mongolfiera",
+        "spanish inquisition": "Inquisizione spagnola",
+        "caravan": "Carovana",
+        "druid circle": "Circolo di druidi",
+        "lunar base": "Base lunare",
+        "shaolin temple": "Tempio Shaolin",
+        "speakeasy": "Proibizionismo",
+        "musketeers": "Compagnia di moschettieri",
+        "medieval tournament": "Torneo medievale",
+        "trojan war": "Guerra di Troia",
+        "woodstock": "Festival di Woodstock",
+        "harem": "Harem imperiale ottomano",
+        "world war airship": "Dirigibile della prima guerra mondiale",
+        "ancient olympic": "Giochi olimpici antichi",
+        "roman senate": "Senato romano",
+        "gold rush mining camp": "Campo minerario della corsa all'oro",
+        "viking longship": "Imbarcazione vichinga",
+        "CHIAVE": "VALORE",
         "roles": {
             "airplane": {
                 "first class passenger": "Passeggero di Prima Classe",
@@ -550,13 +568,166 @@
                 "ludovico": "Ludovico il Moro"
             },
             "pyramid": {
-                "faraone": "Faraone",
-                "schiavo": "Schiavo",
-                "frustatore": "Frustatore",
-                "guardia": "Guardia",
-                "capo cantiere": "Capo cantiere",
-                "operaio": "Operaio",
-                "sacerdote": "Sacerdote"
+                "player1": "Faraone",
+                "player2": "Schiavo",
+                "player3": "Frustatore",
+                "player4": "Guardia",
+                "player5": "Capo cantiere",
+                "player6": "Operaio",
+                "player7": "Sacerdote"
+            },
+            "hot air balloon": {
+                "player1": "Avventuriero",
+                "player2": "Costruttore",
+                "player3": "Pilota",
+                "player4": "Finanziatore",
+                "player5": "Scienziato",
+                "player6": "Aviatore",
+                "player7": "Scettico"
+            },
+            "spanish inquisition": {
+                "player1": "Inquisitore",
+                "player2": "Ebreo",
+                "player3": "Re Ferdinando d’Aragona",
+                "player4": "Papa Sisto IV",
+                "player5": "Spagnolo cristiano",
+                "player6": "Notaio dei sequestri",
+                "player7": "Accusatore"
+            },
+            "caravan": {
+                "player1": "Beduino",
+                "player2": "Tuareg",
+                "player3": "Commerciante",
+                "player4": "Guida",
+                "player5": "Schiavo",
+                "player6": "Messaggero",
+                "player7": "Artigiano"
+            },
+            "druid circle": {
+                "player1": "Faraone",
+                "player2": "Schiavo",
+                "player3": "Frustatore",
+                "player4": "Guardia",
+                "player5": "Capo cantiere",
+                "player6": "Operaio",
+                "player7": "Sacerdote"
+            },
+            "lunar base": {
+                "player1": "Faraone",
+                "player2": "Schiavo",
+                "player3": "Frustatore",
+                "player4": "Guardia",
+                "player5": "Capo cantiere",
+                "player6": "Operaio",
+                "player7": "Sacerdote"
+            },
+            "shaolin temple": {
+                "player1": "Faraone",
+                "player2": "Schiavo",
+                "player3": "Frustatore",
+                "player4": "Guardia",
+                "player5": "Capo cantiere",
+                "player6": "Operaio",
+                "player7": "Sacerdote"
+            },
+            "speakeasy": {
+                "player1": "Faraone",
+                "player2": "Schiavo",
+                "player3": "Frustatore",
+                "player4": "Guardia",
+                "player5": "Capo cantiere",
+                "player6": "Operaio",
+                "player7": "Sacerdote"
+            },
+            "musketeers": {
+                "player1": "Faraone",
+                "player2": "Schiavo",
+                "player3": "Frustatore",
+                "player4": "Guardia",
+                "player5": "Capo cantiere",
+                "player6": "Operaio",
+                "player7": "Sacerdote"
+            },
+            "medieval tournament": {
+                "player1": "Faraone",
+                "player2": "Schiavo",
+                "player3": "Frustatore",
+                "player4": "Guardia",
+                "player5": "Capo cantiere",
+                "player6": "Operaio",
+                "player7": "Sacerdote"
+            },
+            "trojan war": {
+                "player1": "Faraone",
+                "player2": "Schiavo",
+                "player3": "Frustatore",
+                "player4": "Guardia",
+                "player5": "Capo cantiere",
+                "player6": "Operaio",
+                "player7": "Sacerdote"
+            },
+            "woodstock": {
+                "player1": "Faraone",
+                "player2": "Schiavo",
+                "player3": "Frustatore",
+                "player4": "Guardia",
+                "player5": "Capo cantiere",
+                "player6": "Operaio",
+                "player7": "Sacerdote"
+            },
+            "harem": {
+                "player1": "Faraone",
+                "player2": "Schiavo",
+                "player3": "Frustatore",
+                "player4": "Guardia",
+                "player5": "Capo cantiere",
+                "player6": "Operaio",
+                "player7": "Sacerdote"
+            },
+            "world war airship": {
+                "player1": "Faraone",
+                "player2": "Schiavo",
+                "player3": "Frustatore",
+                "player4": "Guardia",
+                "player5": "Capo cantiere",
+                "player6": "Operaio",
+                "player7": "Sacerdote"
+            },
+            "ancient olympic": {
+                "player1": "Faraone",
+                "player2": "Schiavo",
+                "player3": "Frustatore",
+                "player4": "Guardia",
+                "player5": "Capo cantiere",
+                "player6": "Operaio",
+                "player7": "Sacerdote"
+            },
+            "roman senate": {
+                "player1": "Faraone",
+                "player2": "Schiavo",
+                "player3": "Frustatore",
+                "player4": "Guardia",
+                "player5": "Capo cantiere",
+                "player6": "Operaio",
+                "player7": "Sacerdote"
+            },
+            "gold rush mining camp": {
+                "player1": "Faraone",
+                "player2": "Schiavo",
+                "player3": "Frustatore",
+                "player4": "Guardia",
+                "player5": "Capo cantiere",
+                "player6": "Operaio",
+                "player7": "Sacerdote"
+            },
+            "viking longship": {
+                "player1": "Faraone",
+                "player2": "Schiavo",
+                "player3": "Frustatore",
+                "player4": "Guardia",
+                "player5": "Capo cantiere",
+                "player6": "Operaio",
+                "player7": "Sacerdote"
             }
         }
     }
