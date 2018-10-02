@@ -105,7 +105,7 @@ locations3 = [
     },
     {
         name: 'locations.speakeasy',
-        translation: 'Proibizionismo',
+        translation: 'Speakeasy (Proibizionismo)',
         roles: [
             'locations.roles.speakeasy.player1',
             'locations.roles.speakeasy.player2',
