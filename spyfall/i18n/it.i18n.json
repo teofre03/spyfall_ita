@@ -676,31 +676,31 @@
                 "player7": "Star del rock"
             },
             "harem": {
-                "player1": "player1",
-                "player2": "player2",
-                "player3": "player3",
-                "player4": "player4",
-                "player5": "player5",
-                "player6": "player6",
-                "player7": "player7"
+                "player1": "Sultano ottomano",
+                "player2": "Madre del sultano",
+                "player3": "Moglie del sultano",
+                "player4": "Concubina",
+                "player5": "Schiava",
+                "player6": "Maestro delle Fanciulle",
+                "player7": "Custode del Cancello della Felicità "
             },
             "world war airship": {
-                "player1": "player1",
-                "player2": "player2",
-                "player3": "player3",
-                "player4": "player4",
-                "player5": "player5",
-                "player6": "player6",
-                "player7": "player7"
+                "player1": "Bombardiere",
+                "player2": "Capitano",
+                "player3": "Meccanico",
+                "player4": "Capo timoniere di quota",
+                "player5": "Radiotelegrafista",
+                "player6": "Cuoco",
+                "player7": "Hostess"
             },
             "ancient olympic": {
-                "player1": "player1",
-                "player2": "player2",
-                "player3": "player3",
-                "player4": "player4",
-                "player5": "player5",
-                "player6": "player6",
-                "player7": "player7"
+                "player1": "Puglie",
+                "player2": "Lottatore",
+                "player3": "Corridore",
+                "player4": "Atleta di Pentathlon",
+                "player5": "Scudiero",
+                "player6": "Ginnasta",
+                "player7": "Tifoso"
             },
             "roman senate": {
                 "player1": "player1",
