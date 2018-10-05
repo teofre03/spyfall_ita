@@ -703,31 +703,31 @@
                 "player7": "Tifoso"
             },
             "roman senate": {
-                "player1": "player1",
-                "player2": "player2",
-                "player3": "player3",
-                "player4": "player4",
-                "player5": "player5",
-                "player6": "player6",
-                "player7": "player7"
+                "player1": "Imperatore",
+                "player2": "Senatore",
+                "player3": "Senatore corrotto",
+                "player4": "Console",
+                "player5": "Magistrato",
+                "player6": "Pretore",
+                "player7": "Tribuno della plebe"
             },
             "gold rush mining camp": {
-                "player1": "player1",
-                "player2": "player2",
-                "player3": "player3",
-                "player4": "player4",
-                "player5": "player5",
-                "player6": "player6",
-                "player7": "player7"
+                "player1": "Minatore",
+                "player2": "Nativo del luogo",
+                "player3": "Vecchio cercatore",
+                "player4": "Cercatore",
+                "player5": "Nativo del luogo",
+                "player6": "Giovane in cerca di fortuna",
+                "player7": "Cercatore"
             },
             "viking longship": {
-                "player1": "player1",
-                "player2": "player2",
-                "player3": "player3",
-                "player4": "player4",
-                "player5": "player5",
-                "player6": "player6",
-                "player7": "player7"
+                "player1": "Condottiero Militare",
+                "player2": "Carpentiere",
+                "player3": "Guerriero",
+                "player4": "Schiavo",
+                "player5": "Re",
+                "player6": "Cuoco",
+                "player7": "Prigioniero"
             }
         }
     }
