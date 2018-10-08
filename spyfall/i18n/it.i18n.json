@@ -114,7 +114,7 @@
                 "customer": "Cliente"
             },
             "beach": {
-                "beach waitress": "Cameriera da Spiaggia",
+                "beach waitress": "Barista",
                 "kite surfer": "Kitesurfer",
                 "lifeguard": "Bagnino",
                 "thief": "Ladro",
@@ -249,7 +249,7 @@
                 "sailor": "Marinaio"
             },
             "polar station": {
-                "medic": "Medicoq",
+                "medic": "Medico",
                 "expedition leader": "Capo Spedizione",
                 "biologist": "Biologo",
                 "radioman": "Operatore radio",
@@ -262,7 +262,7 @@
                 "lawyer": "Avvocato",
                 "journalist": "Giornalista",
                 "criminalist": "Criminologo",
-                "archivist": "Archivista\n",
+                "archivist": "Archivista",
                 "criminal": "Criminale",
                 "patrol officer": "Ufficiale di Pattuglia"
             },
@@ -276,12 +276,12 @@
                 "customer": "Cliente"
             },
             "school": {
-                "gym teacher": "Personal Trainer",
-                "principal": "Capo",
-                "security guard": "Guardia della Sicurezza",
-                "janitor": "Custode",
-                "cafeteria lady": "Barista",
-                "maintenance man": "Addetto alla Manutenzione",
+                "gym teacher": "Insegnante di ginnastica",
+                "principal": "Preside",
+                "security guard": "Bidella",
+                "janitor": "Genitore convocato dal preside",
+                "cafeteria lady": "Segretaria",
+                "maintenance man": "Ragazzo delle macchinette",
                 "student": "Studente"
             },
             "service station": {
@@ -314,7 +314,7 @@
             "supermarket": {
                 "cashier": "Cassiere",
                 "butcher": "Macellaio",
-                "janitor": "Bidello",
+                "janitor": "Panettiere",
                 "security guard": "Guardia della Sicurezza",
                 "food sample demonstrator": "Promoter",
                 "shelf stocker": "Magazziniere",
@@ -326,15 +326,15 @@
                 "cashier": "Cassiere",
                 "director": "Direttore",
                 "actor": "Attore",
-                "crew man": "Membro equipaggio",
+                "crew man": "Artista",
                 "audience member": "Spettatore"
             },
             "university": {
-                "graduate student": "Studente Diplomato",
+                "graduate student": "Studente appena laureato",
                 "professor": "Professore",
-                "dean": "Preside",
+                "dean": "Magnifico rettore",
                 "psychologist": "Psicologo",
-                "maintenance man": "Addetto alla manutenzione",
+                "maintenance man": "Addetto alla manutenzione delle macchinette",
                 "janitor": "Bidello",
                 "student": "Studente"
             },
