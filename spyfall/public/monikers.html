@@ -1,0 +1,161 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Monikers</title>
+    <link href="http://code.jquery.com/ui/1.9.0/themes/cupertino/jquery-ui.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+    <script src="jquery.csv.js"></script>
+    <style>
+    .card{
+        border: 1px solid black; border-radius: 33px; height: 450px; width: 300px; position: relative; display: block; margin: auto;
+    }
+    .title{
+        margin-top: 30px; font-weight: bold; text-align: center; font-size: 20px; flex-wrap: wrap;
+    }
+    .description{
+        margin-top: 15px; height: 286px; text-align: left; font-size: 17px; flex-wrap: wrap; margin-left: 35px; margin-right: 35px;
+    }
+    .points-box{
+        height: 60px;width: 55px;border: 1px solid red;margin: auto;margin-top: 34px;background-color: red;border-top-left-radius: 25px;border-top-right-radius: 25px;text-align: center;color: white;vertical-align: middle;
+    }
+    .points{
+        margin-top: 21px; font-size: 20px;
+    }
+    .button{
+        border: 1px solid black; border-radius: 33px; height: 60px; width: 300px; position: relative; display: block; margin: auto; margin-top: 30px;
+        overflow: hidden;
+    }
+    #start{
+        text-align: center;
+        display: block;
+        margin-top: 16px;
+        font-weight: bold;
+        font-size: 22px;
+    }
+    progress[value] {
+      /* Reset the default appearance */
+      -webkit-appearance: none;
+       appearance: none;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    progress[value]::-webkit-progress-value {
+        background-image:
+           -webkit-linear-gradient(left, #30e036, #30e036);
+           -webkit-animation: animate-stripes 5s linear infinite;
+        animation: animate-stripes 5s linear infinite;
+        border-radius: 2px;
+        background-size: 35px 20px, 100% 100%, 100% 100%;
+    }
+    @-webkit-keyframes animate-stripes {
+       100% { background-position: -100px 0px; }
+    }
+
+    @keyframes animate-stripes {
+       100% { background-position: -100px 0px; }
+    }
+    </style>
+</head>
+<body>
+<div class="card" style=" ">
+    <div id="title" class="title"></div>
+    <div id="description" class="description"></div>
+    <div id="points-box" class="points-box">
+        <div id="points" class="points"></div>
+    </div>
+</div>
+<div class="button" onclick="start();">
+    <div id="start">INIZIA</div>
+    <progress value="0" max="30" id="progressBar" style="display: none;"></progress>
+</div>
+<script>
+    function shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+      return array;
+    }
+
+    var cards = [];
+    var remainingCards = [];
+    var currentCardIndex = 0;
+    var points = [0,0];
+    var currentPlayer = 0;
+    var playing = false;
+
+    $.ajax({
+        url: "monikers.csv",
+        async: false,
+        success: function (csvd) {
+            cards = $.csv.toArrays(csvd);
+        },
+        dataType: "text",
+        complete: function () {
+            // Mischia le carte e sceglie la prima
+            cards = shuffle(cards);
+            remainingCards = cards.slice();
+            change();
+        }
+    });
+
+    function changePlayer(){
+        if(currentPlayer == 0){
+            currentPlayer = 1;
+        } else {
+            currentPlayer = 0;
+        }
+    }
+
+    function change(){
+        currentCardIndex++;
+        if(currentCardIndex >= remainingCards.length){
+          currentCardIndex = 0;
+        }
+        var currentCard = remainingCards[currentCardIndex];
+        $('#title').text(currentCard[0]);
+        $('#description').text(currentCard[1]);
+        $('#points').text(currentCard[2]);
+    }
+
+    function correct(){
+        var currentCard = remainingCards[currentCardIndex];
+        var currentPoints = points[currentPlayer];
+        points[currentPlayer] = currentPoints + parseInt(currentCard[2]);
+        change();
+    }
+
+    function start(){
+        if(!playing){
+            playing = true;
+            // Mischia le carte rimaste e sceglie la prima
+            remainingCards = shuffle(remainingCards);
+            startTimer();
+        }
+    }
+
+    function startTimer(){
+        change();
+        $('#start').hide();
+        $('#progressBar').show();
+        var timeleft = 30;
+        var downloadTimer = setInterval(function(){
+          document.getElementById("progressBar").value = 30 - --timeleft;
+          if(timeleft <= 0){
+            changePlayer();
+            $('#start').show();
+            $('#progressBar').hide();
+            clearInterval(downloadTimer);
+            playing = false;
+          }
+        },1000);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <title>Nome in codice - Duetto</title>
+  </head>
+  <body class="text-center">
+    <style>
+        table { width: 250px; background-color: black; color: #000000; border-color: #000000; border-collapse: collapse; }
+        th, td {
+            width: 50px; height: 34px; border-width: 10px; border-color: black; border-radius: 64px;
+        }
+        td {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .col-sm-12 { padding: 0px; }
+        .playerImg {
+            height: 30px;
+        }
+        #playerName {
+            display:inline-block;
+            position:relative;
+            text-align:center;
+            width: 90%;
+            padding: .25em .4em;
+            font-size: 75%;
+            font-weight: 700;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: .25rem;
+        }
+        .frame {
+            background-color: #000;
+            border: solid 5vmin #eee;
+            border-bottom-color: #fff;
+            border-left-color: #eee;
+            border-radius: 20px;
+            border-right-color: #eee;
+            border-top-color: #ddd;
+            box-shadow: 0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
+            box-sizing: border-box;
+            display: inline-block;
+            margin: 4vh 10vw;
+            height: 230px;
+            width: 304px;
+            padding: 2vmin;
+            position: relative;
+            text-align: center;
+          &:before {
+            border-radius:2px;
+            bottom:-2vmin;
+            box-shadow:0 2px 5px 0 rgba(0,0,0,.25) inset;
+            content:"";
+            left:-2vmin;
+            position:absolute;
+            right:-2vmin;
+            top:-2vmin;
+          }
+          &:after {
+            border-radius:2px;
+            bottom:-2.5vmin;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);
+            content:"";
+            left:-2.5vmin;
+            position:absolute;
+            right:-2.5vmin;
+            top:-2.5vmin;
+          }
+        }
+        #change {
+              display:inline-block;
+              position:relative;
+              text-align:center;
+              width: 70%;
+        }
+    </style>
+    <div class="wrapper container">
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+                <span id="playerName" class="badge">GIOCATORE <img class="playerImg" src="https://png.icons8.com/metro/1600/1-circle.png" border="0" alt="Image and video hosting by TinyPic"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="frame">
+                <table id="p1" border="1" cellspacing="0" cellpadding="0" align="center">
+                    <tbody>
+                        <tr>
+                        <td id="p1_11"></td>
+                        <td id="p1_12"></td>
+                        <td id="p1_13"></td>
+                        <td id="p1_14"></td>
+                        <td id="p1_15"></td>
+                        </tr>
+                        <tr>
+                        <td id="p1_21"></td>
+                        <td id="p1_22"></td>
+                        <td id="p1_23"></td>
+                        <td id="p1_24"></td>
+                        <td id="p1_25"></td>
+                        </tr>
+                        <tr>
+                        <td id="p1_31"></td>
+                        <td id="p1_32"></td>
+                        <td id="p1_33"></td>
+                        <td id="p1_34"></td>
+                        <td id="p1_35"></td>
+                        </tr>
+                        <tr>
+                        <td id="p1_41"></td>
+                        <td id="p1_42"></td>
+                        <td id="p1_43"></td>
+                        <td id="p1_44"></td>
+                        <td id="p1_45"></td>
+                        </tr>
+                        <tr>
+                        <td id="p1_51"></td>
+                        <td id="p1_52"></td>
+                        <td id="p1_53"></td>
+                        <td id="p1_54"></td>
+                        <td id="p1_55"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="p2" border="1" cellspacing="0" cellpadding="0" align="center">
+                    <tbody>
+                        <tr>
+                        <td id="p2_55"></td>
+                        <td id="p2_54"></td>
+                        <td id="p2_53"></td>
+                        <td id="p2_52"></td>
+                        <td id="p2_51"></td>
+                        </tr>
+                        <tr>
+                        <td id="p2_45"></td>
+                        <td id="p2_44"></td>
+                        <td id="p2_43"></td>
+                        <td id="p2_42"></td>
+                        <td id="p2_41"></td>
+                        </tr>
+                        <tr>
+                        <td id="p2_35"></td>
+                        <td id="p2_34"></td>
+                        <td id="p2_33"></td>
+                        <td id="p2_32"></td>
+                        <td id="p2_31"></td>
+                        </tr>
+                        <tr>
+                        <td id="p2_25"></td>
+                        <td id="p2_24"></td>
+                        <td id="p2_23"></td>
+                        <td id="p2_22"></td>
+                        <td id="p2_21"></td>
+                        </tr>
+                        <tr>
+                        <td id="p2_15"></td>
+                        <td id="p2_14"></td>
+                        <td id="p2_13"></td>
+                        <td id="p2_12"></td>
+                        <td id="p2_11"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <button id="change" type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#switchModal">CAMBIA GIOCATORE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="switchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Attenzione</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Cambiare giocatore?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+            <button type="button" class="btn btn-primary" onclick="changePlayer();">Si</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <script>
+
+        var thropy1 = "http://i65.tinypic.com/ruttle.png";
+        var imageP1 = "https://png.icons8.com/metro/1600/1-circle.png";
+        var imageP2 = "https://png.icons8.com/metro/1600/2-circle.png";
+
+        var currentPlayer;
+
+        $( document ).ready(function() {
+            currentPlayer = "p1";
+            $('#p2').hide();
+
+            var carte = [[0,1], [0,2], [0,0], [1,0], [1,2], [1,2], [1,2], [1,2], [1,2], [1,1], [1,1], [1,1], [2,1], [2,1], [2,1], [2,1], [2,1], [2,2], [2,2], [2,2], [2,2], [2,2], [2,2], [2,2], [2,0]];
+
+            for (var i = 0; i <= 25 - 1; i++) {
+                var max = 25-i;
+                var currentIndex = getRandomIndex(max);
+                var cella = carte[currentIndex];
+                carte.splice(currentIndex, 1);
+                setColor("p1", i, cella[0]);
+                setColor("p2", i, cella[1]);
+            }
+        });
+
+
+        function setColor(player, cella, numColor){
+            var color = "";
+            var elemento = "";
+            switch(numColor) {
+                case 0:
+                    color = "black";
+                    break;
+                case 1:
+                    color = "#58a94b";
+                    break;
+                default:
+                    color = "#efca6d";
+            }
+            switch(cella) {
+                case 0:
+                    elemento = "11";
+                    break;
+                case 1:
+                    elemento = "12";
+                    break;
+                case 2:
+                    elemento = "13";
+                    break;
+                case 3:
+                    elemento = "14";
+                    break;
+                case 4:
+                    elemento = "15";
+                    break;
+                case 5:
+                    elemento = "21";
+                    break;
+                case 6:
+                    elemento = "22";
+                    break;
+                case 7:
+                    elemento = "23";
+                    break;
+                case 8:
+                    elemento = "24";
+                    break;
+                case 9:
+                    elemento = "25";
+                    break;
+                case 10:
+                    elemento = "31";
+                    break;
+                case 11:
+                    elemento = "32";
+                    break;
+                case 12:
+                    elemento = "33";
+                    break;
+                case 13:
+                    elemento = "34";
+                    break;
+                case 14:
+                    elemento = "35";
+                    break;
+                case 15:
+                    elemento = "41";
+                    break;
+                case 16:
+                    elemento = "42";
+                    break;
+                case 17:
+                    elemento = "43";
+                    break;
+                case 18:
+                    elemento = "44";
+                    break;
+                case 19:
+                    elemento = "45";
+                    break;
+                case 20:
+                    elemento = "51";
+                    break;
+                case 21:
+                    elemento = "52";
+                    break;
+                case 22:
+                    elemento = "53";
+                    break;
+                case 23:
+                    elemento = "54";
+                    break;
+                case 24:
+                    elemento = "55";
+                    break;
+            }
+            document.getElementById(player + "_" + elemento).style.backgroundColor = color;
+            if (color == "black") {
+                $('#' + player + "_" + elemento).css('background-image','url(https://flaticons.net/gd/makefg.php?i=icons/Miscellaneous/Danger.png&r=255&g=255&b=255)');
+            } else {
+                $('#' + player + "_" + elemento).css('background-image','none');
+            }
+        }
+
+        function getRandomIndex(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        function changePlayer(){
+            var oldPlayer = currentPlayer;
+            if (currentPlayer == "p1"){
+                currentPlayer = "p2";
+                $(".playerImg").attr("src",imageP2);
+            } else {
+                currentPlayer = "p1";
+                $(".playerImg").attr("src",imageP1);
+            }
+            $('#' + oldPlayer).hide("slide", {direction: "right" }, "slow");
+            $('#switchModal').modal('hide');
+            $("#change").prop("disabled",true);
+            $("#change").text("ATTENDERE... 5");
+            setTimeout(function() {
+                $("#change").text("ATTENDERE... 4");
+            }, 1000);
+            setTimeout(function() {
+                $("#change").text("ATTENDERE... 3");
+            }, 2000);
+            setTimeout(function() {
+                $("#change").text("ATTENDERE... 2");
+            }, 3000);
+            setTimeout(function() {
+                $("#change").text("ATTENDERE... 1");
+            }, 4000);
+            setTimeout(function() {
+                $('#' + currentPlayer).show();
+                $("#change").prop("disabled",false);
+                $("#change").text("CAMBIA GIOCATORE");
+            }, 5000);
+        }
+
+    </script>
+  </body>
+</html>

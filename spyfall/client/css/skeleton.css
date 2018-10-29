@@ -280,7 +280,7 @@ ol ul {
   margin: 1.5rem 0 1.5rem 3rem;
   font-size: 90%; }
 li {
-  margin-bottom: 1rem; }
+  margin-bottom: 0px; }
 
 
 /* Code
@@ -331,7 +331,6 @@ dl,
 figure,
 table,
 p,
-ul,
 ol,
 form {
   margin-bottom: 2.5rem; }

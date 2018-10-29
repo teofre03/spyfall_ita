@@ -261,25 +261,61 @@
         <button class="btn-toggle-location">{{_ "ui.show hide" }}</button>
 
         <div class="location-container-content" style="display: none;">
-            <label style="font-size: 14px;">Spyfall 1:</label>
-            {{#each location1 }}
-                <div class="location-name">{{_ name }}</div>
-            {{/each}}
+            <label style="font-size: 14px; cursor: pointer;" onclick="$('#spyfall1').toggle();">SPYFALL 1</label>
+            <div id="spyfall1" style="display: none;">
+                {{#each location in location1 }}
+                    <div class="location-name" onclick="$(this).next().toggle();">{{_ location.name }}</div>
+                    <ul style="display: none;">
+                    {{#each role in location.roles }}
+                        <li>
+                        {{_ role }}
+                        </li>
+                    {{/each}}
+                    </ul>
+                {{/each}}
+            </div>
             <br>
-            <label style="font-size: 14px;">Spyfall 2:</label>
-            {{#each location2 }}
-                <div class="location-name">{{_ name }}</div>
-            {{/each}}
+            <label style="font-size: 14px; cursor: pointer;" onclick="$('#spyfall2').toggle();">SPYFALL 2</label>
+            <div id="spyfall2" style="display: none;">
+                {{#each location in location2 }}
+                    <div class="location-name" onclick="$(this).next().toggle();">{{_ location.name }}</div>
+                    <ul style="display: none;">
+                    {{#each role in location.roles }}
+                        <li>
+                        {{_ role }}
+                        </li>
+                    {{/each}}
+                    </ul>
+                {{/each}}
+            </div>
             <br>
-            <label style="font-size: 14px;">Spyfall 3:</label>
-            {{#each location3 }}
-                <div class="location-name">{{_ name }}</div>
-            {{/each}}
+            <label style="font-size: 14px; cursor: pointer;" onclick="$('#spyfall3').toggle();">SPYFALL 3</label>
+            <div id="spyfall3" style="display: none;">
+                {{#each location in location3 }}
+                    <div class="location-name" onclick="$(this).next().toggle();">{{_ location.name }}</div>
+                    <ul style="display: none;">
+                    {{#each role in location.roles }}
+                        <li>
+                        {{_ role }}
+                        </li>
+                    {{/each}}
+                    </ul>
+                {{/each}}
+            </div>
             <br>
-            <label style="font-size: 14px;">Spyfall NSFW:</label>
-            {{#each nsfw }}
-                <div class="location-name">{{_ name }}</div>
-            {{/each}}
+            <label style="font-size: 14px; cursor: pointer;" onclick="$('#spyfallNSFW').toggle();">SPYFALL NSFW</label>
+                <div id="spyfallNSFW" style="display: none;">
+                {{#each location in nsfw }}
+                    <div class="location-name" onclick="$(this).next().toggle();">{{_ location.name }}</div>
+                    <ul style="display: none;">
+                    {{#each role in location.roles }}
+                        <li>
+                        {{_ role }}
+                        </li>
+                    {{/each}}
+                    </ul>
+                {{/each}}
+            </div>
         </div>
     </div>
 

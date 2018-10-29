@@ -117,17 +117,17 @@
                 "beach waitress": "Barista",
                 "kite surfer": "Kitesurfer",
                 "lifeguard": "Bagnino",
-                "thief": "Ladro",
+                "thief": "Venditore ambulante",
                 "beach photographer": "Fotografo di Spiaggie",
-                "ice cream truck driver": "Addetto al camioncino del gelato",
+                "ice cream truck driver": "Venditore di cocco",
                 "beach goer": "Bagnante"
             },
             "cathedral": {
                 "priest": "Prete",
                 "beggar": "Mendicante",
-                "sinner": "Imputato",
+                "sinner": "Peccatore",
                 "tourist": "Turista",
-                "sponsor": "Sponsor",
+                "sponsor": "Vescovo",
                 "chorister": "Corista",
                 "parishioner": "Parrocchiano"
             },
@@ -138,7 +138,7 @@
                 "fire eater": "Mangiafuoco",
                 "clown": "Clown",
                 "juggler": "Giocoliere",
-                "visitor": "Visitatore"
+                "visitor": "Spettatore"
             },
             "corporate party": {
                 "entertainer": "Intrattenitore",
@@ -164,7 +164,7 @@
                 "bouncer": "Buttafuori",
                 "manager": "Manager",
                 "hustler": "Baro",
-                "dealer": "Commerciante",
+                "dealer": "Mazziere",
                 "gambler": "Giocatore d'azzardo"
             },
             "day spa": {
@@ -189,7 +189,7 @@
                 "nurse": "Infermiera",
                 "doctor": "Dottore",
                 "anesthesiologist": "Anestesista",
-                "intern": "Interno",
+                "intern": "Stagista",
                 "therapist": "Terapista",
                 "surgeon": "Chirurgo",
                 "patient": "Paziente"

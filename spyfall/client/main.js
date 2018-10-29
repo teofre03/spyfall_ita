@@ -49,15 +49,30 @@ function getAllLocations() {
     return locations.concat(locations2).concat(locations3).concat(nsfw);
 }
 
+function getAllRoles1() {
+    var selected = locations;
+    selected.sort(function(a, b){
+        var keyA = a.translation != '' ? a.translation : a.name,
+            keyB = b.translation != '' ? b.translation : b.name;
+        if(keyA < keyB) return -1;
+        if(keyA > keyB) return 1;
+        return 0;
+    });
+    for(var i=0; i<selected.length; i++){
+        console.log(selected);
+    }
+    return locations.concat(locations2).concat(locations3).concat(nsfw);
+}
+
 function getLocations1() {
     var selected = locations;
     selected.sort(function(a, b){
-                var keyA = a.translation != '' ? a.translation : a.name,
-                    keyB = b.translation != '' ? b.translation : b.name;
-                if(keyA < keyB) return -1;
-                if(keyA > keyB) return 1;
-                return 0;
-            });
+        var keyA = a.translation != '' ? a.translation : a.name,
+            keyB = b.translation != '' ? b.translation : b.name;
+        if(keyA < keyB) return -1;
+        if(keyA > keyB) return 1;
+        return 0;
+    });
     return locations;
 }
 
@@ -305,6 +320,7 @@ Template.main.helpers({
 
 Template.footer.helpers({
   languages: getLanguageList(),
+  roles1: getAllRoles1(),
   locations: getAllLocations(),
   location1: getLocations1(),
   location2: getLocations2(),
