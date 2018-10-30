@@ -1,0 +1,155 @@
+body {
+      overscroll-behavior: contain;
+      font-family: "Gotham Rounded A", sans-serif;
+      background-image: url(background.jpg);
+      background-repeat: repeat;
+      background-size: contain;
+    }
+    .card{
+        border: 1px solid black;
+        border-radius: 10px;
+        height: 410px;
+        width: 260px;
+        position: relative;
+        display: block;
+        margin: auto;
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+        pointer-events: none;
+        padding: 20px;
+        background: white;
+    }
+    .title{
+        margin-top: 30px;
+        text-align: center;
+        white-space: normal;
+        font-size: 18px;
+        margin-top: 26px;
+        margin-bottom: 23px;
+        font-weight: bold;
+        line-height: 23px;
+        height: 23px;
+    }
+    .description{
+        margin-top: 30px;
+        height: 266px;
+        text-align: center;
+        white-space: normal;
+        font-size: 12px;
+        flex-wrap: wrap;
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+    .line{
+        width: 100px;
+        border-bottom: 2px dotted gray;
+        margin-left: 81px;
+    }
+    .points-box{
+        border: none;
+        margin: auto;
+        margin-top: 28px;
+        background-color: red;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        text-align: center;
+        color: white;
+        vertical-align: middle;
+        background-color: #15ace5;
+        width: 60px;
+        height: 50px;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        font-size: 20px;
+        padding-top: 5px;
+    }
+    .points{
+        margin-top: 10px;
+        font-size: 20px;
+        color: white;
+    }
+    .points-label{
+        text-transform: uppercase;
+        font-size: 8px;
+    }
+    .button{
+        border: 1px solid black;
+        border-radius: 33px;
+        height: 50px;
+        width: 300px;
+        position: relative;
+        display: block;
+        margin: auto;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+    .doubleButton{
+        border: 1px solid black;
+        border-radius: 33px;
+        height: 50px;
+        width: 150;
+        position: relative;
+        display: inline-block;
+        margin: auto;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+    #startContainer{
+    	background: white;
+    }
+    #start{
+        text-align: center;
+        display: block;
+        margin-top: 13px;
+        font-weight: bold;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    #skip{
+        text-align: center;
+        display: block;
+        margin-top: 13px;
+        font-weight: bold;
+        font-size: 22px;
+    }
+    #correct{
+        text-align: center;
+        display: block;
+        margin-top: 13px;
+        font-weight: bold;
+        font-size: 22px;
+    }
+    #skipButton{
+        display: none;
+        background-color: #b3b3b3;
+        cursor: pointer;
+    }
+    #correctButton{
+        display: none;
+        background-color: #00d81b;
+        cursor: pointer;
+    }
+    progress[value] {
+      /* Reset the default appearance */
+      -webkit-appearance: none;
+       appearance: none;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    progress[value]::-webkit-progress-value {
+        background-image:
+           -webkit-linear-gradient(left, #30e036, #30e036);
+           -webkit-animation: animate-stripes 5s linear infinite;
+        animation: animate-stripes 5s linear infinite;
+        border-radius: 2px;
+        background-size: 35px 20px, 100% 100%, 100% 100%;
+    }
+    @-webkit-keyframes animate-stripes {
+       100% { background-position: -100px 0px; }
+    }
+
+    @keyframes animate-stripes {
+       100% { background-position: -100px 0px; }
+    }
