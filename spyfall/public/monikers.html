@@ -331,6 +331,8 @@
                 remainingCards = cards.slice();
             }
             setRoundInfo();
+            var audio = new Audio('buzz.mp3');
+            audio.play();
           }
         },1000);
     }
