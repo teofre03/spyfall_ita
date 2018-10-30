@@ -2,28 +2,70 @@
 <head>
     <meta charset="utf-8">
     <title>Monikers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
     <link href="http://code.jquery.com/ui/1.9.0/themes/cupertino/jquery-ui.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
     <script src="jquery.csv.js"></script>
     <style>
+    body {
+      overscroll-behavior: contain;
+    }
     .card{
-        border: 1px solid black; border-radius: 33px; height: 450px; width: 300px; position: relative; display: block; margin: auto;
+        border: 1px solid black;
+        border-radius: 33px;
+        height: 450px;
+        width: 300px;
+        position: relative;
+        display: block;
+        margin: auto;
     }
     .title{
-        margin-top: 30px; font-weight: bold; text-align: center; font-size: 20px; flex-wrap: wrap;
+        margin-top: 30px;
+        font-weight: bold;
+        text-align: center;
+        font-size: 20px;
+        flex-wrap: wrap;
+        height: 23px;
     }
     .description{
-        margin-top: 15px; height: 286px; text-align: left; font-size: 17px; flex-wrap: wrap; margin-left: 35px; margin-right: 35px;
+        margin-top: 30px;
+        height: 286px;
+        text-align: left;
+        font-size: 14px;
+        flex-wrap: wrap;
+        margin-left: 35px;
+        margin-right: 35px;
     }
     .points-box{
-        height: 60px;width: 55px;border: 1px solid red;margin: auto;margin-top: 34px;background-color: red;border-top-left-radius: 25px;border-top-right-radius: 25px;text-align: center;color: white;vertical-align: middle;
+        height: 60px;width: 55px;border: 1px solid red;margin: auto;margin-top: 19px;background-color: red;border-top-left-radius: 25px;border-top-right-radius: 25px;text-align: center;color: white;vertical-align: middle;
     }
     .points{
         margin-top: 21px; font-size: 20px;
     }
     .button{
-        border: 1px solid black; border-radius: 33px; height: 60px; width: 300px; position: relative; display: block; margin: auto; margin-top: 30px;
+        border: 1px solid black;
+        border-radius: 33px;
+        height: 60px;
+        width: 300px;
+        position: relative;
+        display: block;
+        margin: auto;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+    .doubleButton{
+        border: 1px solid black;
+        border-radius: 33px;
+        height: 60px;
+        width: 150;
+        position: relative;
+        display: inline-block;
+        margin: auto;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-top: 10px;
         overflow: hidden;
     }
     #start{
@@ -32,6 +74,31 @@
         margin-top: 16px;
         font-weight: bold;
         font-size: 22px;
+        cursor: pointer;
+    }
+    #skip{
+        text-align: center;
+        display: block;
+        margin-top: 16px;
+        font-weight: bold;
+        font-size: 22px;
+    }
+    #correct{
+        text-align: center;
+        display: block;
+        margin-top: 16px;
+        font-weight: bold;
+        font-size: 22px;
+    }
+    #skipButton{
+        display: none;
+        background-color: #ff9b04;
+        cursor: pointer;
+    }
+    #correctButton{
+        display: none;
+        background-color: #00d81b;
+        cursor: pointer;
     }
     progress[value] {
       /* Reset the default appearance */
@@ -59,11 +126,19 @@
     </style>
 </head>
 <body>
-<div class="card" style=" ">
-    <div id="title" class="title"></div>
+<div class="card">
+    <div id="title" class="title">MONIKERS</div>
     <div id="description" class="description"></div>
     <div id="points-box" class="points-box">
         <div id="points" class="points"></div>
+    </div>
+</div>
+<div style="display: block; margin:auto; text-align: center;">
+    <div id="skipButton" class="doubleButton" onclick="change();">
+        <div id="skip">PASSA</div>
+    </div>
+    <div id="correctButton" class="doubleButton" onclick="correct();">
+        <div id="correct">CORRETTO</div>
     </div>
 </div>
 <div class="button" onclick="start();">
@@ -83,6 +158,11 @@
       return array;
     }
 
+    var roundInfo = [
+        "<br>ROUND 1:<br>Puoi usare ogni parola, suono o gesto tranne il nome stesso, puoi usare anche il testo sulla carta. Se dici una parte qualsiasi del nome, devi saltare quella carta.",
+        "<br>ROUND 2:<br>Usa una sola parola, che può essere qualsiasi cosa tranne il nome stesso. Puoi ripetere quella parola quante volte vuoi, ma non puoi fare gesti o suoni.",
+        "Solo mimando. Nessuna parola e gli effetti sonori non sono consentiti."];
+    var round = 1;
     var cards = [];
     var remainingCards = [];
     var currentCardIndex = 0;
@@ -99,11 +179,27 @@
         dataType: "text",
         complete: function () {
             // Mischia le carte e sceglie la prima
+            // TODO: prendere le carte in base al numero di giocatori con "cards.slice(0,numgiocatori*5)"
+            var query = location.search.replace('?', '');
+            var players = 4;
+            if(query != ""){
+                var params = parse_query_string(query);
+                players = parseInt(params["players"]);
+            }
             cards = shuffle(cards);
+            if(players*5 < cards.length){
+                cards = cards.slice(0,players*5);
+            }
             remainingCards = cards.slice();
-            change();
+            setRoundInfo();
         }
     });
+
+    function setRoundInfo(){
+        $('#title').text("MONIKERS");
+        $('#description').html(roundInfo[round-1]);
+        $('#points').text("");
+    }
 
     function changePlayer(){
         if(currentPlayer == 0){
@@ -118,16 +214,26 @@
         if(currentCardIndex >= remainingCards.length){
           currentCardIndex = 0;
         }
-        var currentCard = remainingCards[currentCardIndex];
-        $('#title').text(currentCard[0]);
-        $('#description').text(currentCard[1]);
-        $('#points').text(currentCard[2]);
+        if(remainingCards.length == 0){
+            $('#title').text("FINE ROUND");
+            $('#description').html("<div style=\"text-align:center\"><br>Squadra 1: " + points[0] + "<br>Squadra 2: " + points[1] + "</div>");
+            $('#points').text("");
+            $('#skipButton').hide();
+            $('#correctButton').hide();
+        } else {
+            var currentCard = remainingCards[currentCardIndex];
+            $('#title').text(currentCard[0]);
+            $('#description').text(currentCard[1]);
+            $('#points').text(currentCard[2]);
+        }
     }
 
     function correct(){
         var currentCard = remainingCards[currentCardIndex];
         var currentPoints = points[currentPlayer];
         points[currentPlayer] = currentPoints + parseInt(currentCard[2]);
+        remainingCards.splice(currentCardIndex, 1);
+        currentCardIndex--;
         change();
     }
 
@@ -144,6 +250,8 @@
         change();
         $('#start').hide();
         $('#progressBar').show();
+        $('#skipButton').css('display', 'inline-block');
+        $('#correctButton').css('display', 'inline-block');
         var timeleft = 30;
         var downloadTimer = setInterval(function(){
           document.getElementById("progressBar").value = 30 - --timeleft;
@@ -151,10 +259,39 @@
             changePlayer();
             $('#start').show();
             $('#progressBar').hide();
+            $('#skipButton').hide();
+            $('#correctButton').hide();
             clearInterval(downloadTimer);
             playing = false;
+            if(remainingCards.length == 0 && round < 3){
+                round++;
+                remainingCards = cards.slice();
+            }
+            setRoundInfo();
           }
         },1000);
+    }
+
+    function parse_query_string(query) {
+      var vars = query.split("&");
+      var query_string = {};
+      for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        var key = decodeURIComponent(pair[0]);
+        var value = decodeURIComponent(pair[1]);
+        // If first entry with this name
+        if (typeof query_string[key] === "undefined") {
+          query_string[key] = decodeURIComponent(value);
+          // If second entry with this name
+        } else if (typeof query_string[key] === "string") {
+          var arr = [query_string[key], decodeURIComponent(value)];
+          query_string[key] = arr;
+          // If third or later entry with this name
+        } else {
+          query_string[key].push(decodeURIComponent(value));
+        }
+      }
+      return query_string;
     }
 </script>
 </body>
