@@ -61,7 +61,7 @@
         text-align: center;
         color: white;
         vertical-align: middle;
-        background-color: #62A591;
+        background-color: #15ace5;
         width: 60px;
         height: 50px;
         border-top-left-radius: 50%;
@@ -177,7 +177,7 @@
         <div id="correct">CORRETTO</div>
     </div>
 </div>
-<div class="button" onclick="start();">
+<div id="startContainer" class="button" onclick="start();">
     <div id="start">INIZIA</div>
     <progress value="0" max="30" id="progressBar" style="display: none;"></progress>
 </div>
@@ -206,6 +206,9 @@
     var currentPlayer = 0;
     var playing = false;
     var playerPoints = 0;
+    var roundTime = 30;
+    var players = 4;
+    var stop = false;
 
     $.ajax({
         url: "monikers.csv",
@@ -218,10 +221,14 @@
             // Mischia le carte e sceglie la prima
             // TODO: prendere le carte in base al numero di giocatori con "cards.slice(0,numgiocatori*5)"
             var query = location.search.replace('?', '');
-            var players = 4;
             if(query != ""){
                 var params = parse_query_string(query);
-                players = parseInt(params["players"]);
+                if(params["players"] !== undefined){
+                    players = parseInt(params["players"]);
+                }
+                if(params["time"] !== undefined){
+                    roundTime = parseInt(params["time"]);
+                }
             }
             cards = shuffle(cards);
             if(players*5 < cards.length){
@@ -254,12 +261,20 @@
             $('#points').text("0");
             $('#skipButton').hide();
             $('#correctButton').hide();
+            $('#points-box').css("background-color", "#15ace5");
+            stop = true;
+            $('#progressBar').hide();
+            $('#startContainer').hide();
         } else if(currentCardIndex >= remainingCards.length){
-          $('#title').text("FINE TURNO");
+            $('#title').text("FINE TURNO");
             $('#description').html("<div style=\"text-align:center\"><br>Hai totalizzato " + (playerPoints) + " punti!" + "</div>");
             $('#points').text("0");
             $('#skipButton').hide();
             $('#correctButton').hide();
+            $('#points-box').css("background-color", "#15ace5");
+            stop = true;
+            $('#progressBar').hide();
+            $('#startContainer').hide();
         } else {
             var currentCard = remainingCards[currentCardIndex];
             $('#title').text(currentCard[0]);
@@ -303,36 +318,71 @@
             playing = true;
             currentCardIndex = -1;
             playerPoints = 0;
+            stop = false;
             // Mischia le carte rimaste e sceglie la prima
             remainingCards = shuffle(remainingCards);
-            startTimer();
+            startTimer(roundTime);
         }
     }
 
-    function startTimer(){
+    function startTimer(time){
         change();
+        document.getElementById("progressBar").value = 0;
         $('#start').hide();
         $('#progressBar').show();
+        $('#progressBar').attr("max", time);
         $('#skipButton').css('display', 'inline-block');
         $('#correctButton').css('display', 'inline-block');
-        var timeleft = 30;
+        var timeleft = time;
         var downloadTimer = setInterval(function(){
-          document.getElementById("progressBar").value = 30 - --timeleft;
-          if(timeleft <= 0){
+          document.getElementById("progressBar").value = time - --timeleft;
+          if(timeleft <= 0 || stop){
+            $('#startContainer').hide();
+            var audio = new Audio('buzz.mp3');
+            audio.play();
             changePlayer();
-            $('#start').show();
             $('#progressBar').hide();
             $('#skipButton').hide();
             $('#correctButton').hide();
             clearInterval(downloadTimer);
-            playing = false;
-            if(remainingCards.length == 0 && round < 3){
-                round++;
-                remainingCards = cards.slice();
+            var waitTime = 5000;
+            if(remainingCards.length != 0){
+                $('#title').text("FINE TURNO");
+                $('#description').html("<div style=\"text-align:center\"><br>Hai totalizzato " + (playerPoints) + " punti!" + "</div>");
+                $('#points').text("0");
+                $('#skipButton').hide();
+                $('#correctButton').hide();
+                $('#points-box').css("background-color", "#15ace5");
+            } else {
+                $('#points').text("0");
+                $('#skipButton').hide();
+                $('#correctButton').hide();
+                $('#points-box').css("background-color", "#15ace5");
+                if(round < 3){
+                    $('#title').text("FINE ROUND");
+                    $('#description').html("<div style=\"text-align:center\"><b>PUNTEGGIO SQUADRE:</b><br>Squadra 1: " + points[0] + "<br>Squadra 2: " + points[1] + "</div>");
+                    round++;
+                    remainingCards = cards.slice();
+                    waitTime = 10000;
+                } else {
+                    $('#title').text("FINE PARTITA");
+                    var winner = 1;
+                    if(points[0] < points[1]){
+                        winner = 2;
+                    }
+                    if(points[0] != points[1]){
+
+                    }
+                    $('#description').html("<div style=\"text-align:center\"><b>PUNTEGGIO SQUADRE:</b><br>Squadra 1: " + points[0] + "<br>Squadra 2: " + points[1] + "<br><br>Vince la squadra <b>" + winner + "</b>!!!</div>");
+                    waitTime = 60000;
+                }
             }
-            setRoundInfo();
-            var audio = new Audio('buzz.mp3');
-            audio.play();
+            setTimeout(function() {
+                setRoundInfo();
+                playing = false;
+                $('#start').show();
+                $('#startContainer').show();
+            }, waitTime);
           }
         },1000);
     }
