@@ -1,0 +1,44 @@
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <title>Monikers</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	    <meta name="google" content="notranslate">
+	    <link href="http://code.jquery.com/ui/1.9.0/themes/cupertino/jquery-ui.css" rel="stylesheet">
+	    <link rel="stylesheet" type="text/css" href="style.css">
+	    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.2/rangeslider.css">
+	    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+	    <script src="monikers.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.2/rangeslider.js"></script>
+	</head>
+	<body>
+		<div class="card">
+		    <div id="title" class="title">MONIKERS</div>
+		    <div id="settings" class="settings">
+		    <form>
+		    <input type="range" min="4" max="20" step="1" value="8">
+		    </form>
+		    </div>
+		    <div class="line"></div>
+		    <div id="points-box" class="points-box">
+		        <div id="points" class="points">0</div>
+		        <div class="points-label">Punti</div>
+		    </div>
+		</div>
+		
+		<script>
+		$(document).ready(function() {
+			$('input[type="range"]').rangeslider({
+			    polyfill : false,
+			    onInit : function() {
+			        this.output = $( '<div class="range-output" />' ).insertAfter( this.$range ).html( this.$element.val() );
+			    },
+			    onSlide : function( position, value ) {
+			        this.output.html( value );
+			    }
+			});
+		});
+		</script>
+	</body>
+</html>

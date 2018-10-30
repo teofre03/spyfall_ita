@@ -1,266 +1,83 @@
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>Monikers</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="google" content="notranslate">
-    <link href="http://code.jquery.com/ui/1.9.0/themes/cupertino/jquery-ui.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
-    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
-    <script src="jquery.csv.js"></script>
-</head>
-<body>
-<div class="card">
-    <div id="title" class="title">MONIKERS</div>
-    <div id="description" class="description"></div>
-    <div class="line"></div>
-    <div id="points-box" class="points-box">
-        <div id="points" class="points">0</div>
-        <div class="points-label">Punti</div>
-    </div>
-</div>
-<div style="display: block; margin:auto; text-align: center;">
-    <div id="skipButton" class="doubleButton" onclick="change();">
-        <div id="skip">PASSA</div>
-    </div>
-    <div id="correctButton" class="doubleButton" onclick="correct();">
-        <div id="correct">CORRETTO</div>
-    </div>
-</div>
-<div id="startContainer" class="button" onclick="start();">
-    <div id="start">INIZIA</div>
-    <progress value="0" max="30" id="progressBar" style="display: none;"></progress>
-</div>
-<script>
-    function shuffle(array) {
-      var currentIndex = array.length, temporaryValue, randomIndex;
-      while (0 !== currentIndex) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-      }
-      return array;
-    }
+	<head>
+	    <meta charset="utf-8">
+	    <title>Monikers</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	    <meta name="google" content="notranslate">
+	    <link href="http://code.jquery.com/ui/1.9.0/themes/cupertino/jquery-ui.css" rel="stylesheet">
+	    <link rel="stylesheet" type="text/css" href="style.css">
+	    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+	    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+	    <script src="monikers.js"></script>
+	    <script src="jquery.csv.js"></script>
+	</head>
+	<body>
+		<div class="card">
+		    <div id="title" class="title">MONIKERS</div>
+		    <div id="description" class="description"></div>
+		    <div class="line"></div>
+		    <div id="points-box" class="points-box">
+		        <div id="points" class="points">0</div>
+		        <div class="points-label">Punti</div>
+		    </div>
+		</div>
+		<div style="display: block; margin:auto; text-align: center;">
+		    <div id="skipButton" class="doubleButton" onclick="change();">
+		        <div id="skip">PASSA</div>
+		    </div>
+		    <div id="correctButton" class="doubleButton" onclick="correct();">
+		        <div id="correct">CORRETTO</div>
+		    </div>
+		</div>
+		<div id="startContainer" class="button" onclick="start();">
+		    <div id="start">INIZIA</div>
+		    <progress value="0" max="30" id="progressBar" style="display: none;"></progress>
+		</div>
+		<script>
+		    var roundInfo = [
+		        "<br>ROUND 1:<br>Puoi usare ogni parola, suono o gesto tranne il nome stesso, puoi usare anche il testo sulla carta. Se dici una parte qualsiasi del nome, devi saltare quella carta.",
+		        "<br>ROUND 2:<br>Usa una sola parola, che può essere qualsiasi cosa tranne il nome stesso. Puoi ripetere quella parola quante volte vuoi, ma non puoi fare gesti o suoni.",
+		        "<br>ROUND 3:<br>Solo mimando. Nessuna parola e gli effetti sonori non sono consentiti."];
+		    var round = 1;
+		    var cards = [];
+		    var remainingCards = [];
+		    var currentCardIndex = -1;
+		    var points = [0,0];
+		    var currentPlayer = 0;
+		    var playing = false;
+		    var playerPoints = 0;
+		    var roundTime = 30;
+		    var players = 4;
+		    var stop = false;
 
-    var roundInfo = [
-        "<br>ROUND 1:<br>Puoi usare ogni parola, suono o gesto tranne il nome stesso, puoi usare anche il testo sulla carta. Se dici una parte qualsiasi del nome, devi saltare quella carta.",
-        "<br>ROUND 2:<br>Usa una sola parola, che può essere qualsiasi cosa tranne il nome stesso. Puoi ripetere quella parola quante volte vuoi, ma non puoi fare gesti o suoni.",
-        "<br>ROUND 3:<br>Solo mimando. Nessuna parola e gli effetti sonori non sono consentiti."];
-    var round = 1;
-    var cards = [];
-    var remainingCards = [];
-    var currentCardIndex = -1;
-    var points = [0,0];
-    var currentPlayer = 0;
-    var playing = false;
-    var playerPoints = 0;
-    var roundTime = 30;
-    var players = 4;
-    var stop = false;
-
-    $.ajax({
-        url: "https://raw.githubusercontent.com/teofre03/spyfall_ita/master/spyfall/public/monikers.csv",
-        async: false,
-        success: function (csvd) {
-            cards = $.csv.toArrays(csvd);
-        },
-        dataType: "text",
-        complete: function () {
-            // Mischia le carte e sceglie la prima
-            // TODO: prendere le carte in base al numero di giocatori con "cards.slice(0,numgiocatori*5)"
-            var query = location.search.replace('?', '');
-            if(query != ""){
-                var params = parse_query_string(query);
-                if(params["players"] !== undefined){
-                    players = parseInt(params["players"]);
-                }
-                if(params["time"] !== undefined){
-                    roundTime = parseInt(params["time"]);
-                }
-            }
-            cards = shuffle(cards);
-            if(players*5 < cards.length){
-                cards = cards.slice(0,players*5);
-            }
-            remainingCards = cards.slice();
-            setRoundInfo();
-        }
-    });
-
-    function setRoundInfo(){
-        $('#title').text("MONIKERS");
-        $('#description').html(roundInfo[round-1]);
-        $('#points').text("0");
-    }
-
-    function changePlayer(){
-        if(currentPlayer == 0){
-            currentPlayer = 1;
-        } else {
-            currentPlayer = 0;
-        }
-    }
-
-    function change(){
-        currentCardIndex++;
-        if(remainingCards.length == 0){
-            $('#title').text("FINE ROUND");
-            $('#description').html("<div style=\"text-align:center\"><b>PUNTEGGIO SQUADRE:</b><br>Squadra 1: " + points[0] + "<br>Squadra 2: " + points[1] + "</div>");
-            $('#points').text("0");
-            $('#skipButton').hide();
-            $('#correctButton').hide();
-            $('#points-box').css("background-color", "#15ace5");
-            stop = true;
-            $('#progressBar').hide();
-            $('#startContainer').hide();
-        } else if(currentCardIndex >= remainingCards.length){
-            $('#title').text("FINE TURNO");
-            $('#description').html("<div style=\"text-align:center\"><br>Hai totalizzato " + (playerPoints) + " punti!" + "</div>");
-            $('#points').text("0");
-            $('#skipButton').hide();
-            $('#correctButton').hide();
-            $('#points-box').css("background-color", "#15ace5");
-            stop = true;
-            $('#progressBar').hide();
-            $('#startContainer').hide();
-        } else {
-            var currentCard = remainingCards[currentCardIndex];
-            $('#title').text(currentCard[0]);
-            $('#description').text(currentCard[1]);
-            $('#points').text(currentCard[2]);
-            $('#points-box').css("background-color", getColor(parseInt(currentCard[2])));
-        }
-    }
-
-    function getColor(points){
-        switch (points) {
-          case 1:
-            return "#54b899";
-            break;
-          case 2:
-            return "#15ace5";
-            break;
-          case 3:
-            return "#8f66a5";
-            break;
-          case 4:
-            return "#e84735";
-            break;
-          default:
-            return "#15ace5";
-        }
-    }
-
-    function correct(){
-        var currentCard = remainingCards[currentCardIndex];
-        var currentPoints = points[currentPlayer];
-        points[currentPlayer] = currentPoints + parseInt(currentCard[2]);
-        playerPoints = playerPoints + parseInt(currentCard[2]);
-        remainingCards.splice(currentCardIndex, 1);
-        currentCardIndex--;
-        change();
-    }
-
-    function start(){
-        if(!playing){
-            playing = true;
-            currentCardIndex = -1;
-            playerPoints = 0;
-            stop = false;
-            // Mischia le carte rimaste e sceglie la prima
-            remainingCards = shuffle(remainingCards);
-            startTimer(roundTime);
-        }
-    }
-
-    function startTimer(time){
-        change();
-        document.getElementById("progressBar").value = 0;
-        $('#start').hide();
-        $('.button').css("height", "10");
-        $('#progressBar').show();
-        $('#progressBar').attr("max", time);
-        $('#skipButton').css('display', 'inline-block');
-        $('#correctButton').css('display', 'inline-block');
-        var timeleft = time;
-        var downloadTimer = setInterval(function(){
-          document.getElementById("progressBar").value = time - --timeleft;
-          if(timeleft <= 0 || stop){
-            $('#startContainer').hide();
-            var audio = new Audio('buzz.mp3');
-            audio.play();
-            changePlayer();
-            $('#progressBar').hide();
-            $('#skipButton').hide();
-            $('#correctButton').hide();
-            clearInterval(downloadTimer);
-            var waitTime = 5000;
-            if(remainingCards.length != 0){
-                $('#title').text("FINE TURNO");
-                $('#description').html("<div style=\"text-align:center\"><br>Hai totalizzato " + (playerPoints) + " punti!" + "</div>");
-                $('#points').text("0");
-                $('#skipButton').hide();
-                $('#correctButton').hide();
-                $('#points-box').css("background-color", "#15ace5");
-            } else {
-                $('#points').text("0");
-                $('#skipButton').hide();
-                $('#correctButton').hide();
-                $('#points-box').css("background-color", "#15ace5");
-                if(round < 3){
-                    $('#title').text("FINE ROUND");
-                    $('#description').html("<div style=\"text-align:center\"><b>PUNTEGGIO SQUADRE:</b><br>Squadra 1: " + points[0] + "<br>Squadra 2: " + points[1] + "</div>");
-                    round++;
-                    remainingCards = cards.slice();
-                    waitTime = 10000;
-                } else {
-                    $('#title').text("FINE PARTITA");
-                    var winner = 1;
-                    if(points[0] < points[1]){
-                        winner = 2;
-                    }
-                    if(points[0] != points[1]){
-
-                    }
-                    $('#description').html("<div style=\"text-align:center\"><b>PUNTEGGIO SQUADRE:</b><br>Squadra 1: " + points[0] + "<br>Squadra 2: " + points[1] + "<br><br>Vince la squadra <b>" + winner + "</b>!!!</div>");
-                    waitTime = 60000;
-                }
-            }
-            setTimeout(function() {
-                setRoundInfo();
-                playing = false;
-                $('.button').css("height", "50");
-                $('#start').show();
-                $('#startContainer').show();
-            }, waitTime);
-          }
-        },1000);
-    }
-
-    function parse_query_string(query) {
-      var vars = query.split("&");
-      var query_string = {};
-      for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split("=");
-        var key = decodeURIComponent(pair[0]);
-        var value = decodeURIComponent(pair[1]);
-        // If first entry with this name
-        if (typeof query_string[key] === "undefined") {
-          query_string[key] = decodeURIComponent(value);
-          // If second entry with this name
-        } else if (typeof query_string[key] === "string") {
-          var arr = [query_string[key], decodeURIComponent(value)];
-          query_string[key] = arr;
-          // If third or later entry with this name
-        } else {
-          query_string[key].push(decodeURIComponent(value));
-        }
-      }
-      return query_string;
-    }
-</script>
-</body>
+		    $.ajax({
+		        url: "https://raw.githubusercontent.com/teofre03/spyfall_ita/master/spyfall/public/monikers.csv",
+		        async: false,
+		        success: function (csvd) {
+		            cards = $.csv.toArrays(csvd);
+		        },
+		        dataType: "text",
+		        complete: function () {
+		            // Imposta il numero di giocatori ed il tempo del turno in base ai parametri
+		            var query = location.search.replace('?', '');
+		            if(query != ""){
+		                var params = parse_query_string(query);
+		                if(params["players"] !== undefined){
+		                    players = parseInt(params["players"]);
+		                }
+		                if(params["time"] !== undefined){
+		                    roundTime = parseInt(params["time"]);
+		                }
+		            }
+		            // Mischia le carte e sceglie la prima
+		            cards = shuffle(cards);
+		            if(players*5 < cards.length){
+		                cards = cards.slice(0,players*5);
+		            }
+		            remainingCards = cards.slice();
+		            setRoundInfo();
+		        }
+		    });
+		</script>
+	</body>
 </html>

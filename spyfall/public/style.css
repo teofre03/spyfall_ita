@@ -14,7 +14,6 @@ body {
         display: block;
         margin: auto;
         box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-        pointer-events: none;
         padding: 20px;
         background: white;
     }
