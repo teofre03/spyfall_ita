@@ -6,38 +6,49 @@
 	    <meta name="google" content="notranslate">
 	    <link href="http://code.jquery.com/ui/1.9.0/themes/cupertino/jquery-ui.css" rel="stylesheet">
 	    <link rel="stylesheet" type="text/css" href="style.css">
-	    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.2/rangeslider.css">
+	    <link rel="stylesheet" type="text/css" href="rangeslider.css">
 	    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 	    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
 	    <script src="monikers.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.2/rangeslider.js"></script>
+		<script src="rangeslider.js"></script>
 	</head>
 	<body>
 		<div class="card">
 		    <div id="title" class="title">MONIKERS</div>
 		    <div id="settings" class="settings">
-		    <form>
-		    <input type="range" min="4" max="20" step="1" value="8">
-		    </form>
+            <br>
+		    <form action="monikers.html">
+                <span id="playnum" style="display: inline-block;">Numero dei giocatori:</span>
+		        <input name="players" id="rangeplayer" type="range" min="4" max="20" step="1" value="8">
+                <br>
+                <span id="duration" style="display: inline-block;">Durata del turno:</span>
+                <input name="time" id="rangeduration" type="range" min="20" max="60" step="1" value="30">
+                <br>
 		    </div>
-		    <div class="line"></div>
-		    <div id="points-box" class="points-box">
-		        <div id="points" class="points">0</div>
-		        <div class="points-label">Punti</div>
-		    </div>
+		    <button type="submit" class="btn first">GIOCA</button>
+            </form>
 		</div>
-		
+
 		<script>
 		$(document).ready(function() {
-			$('input[type="range"]').rangeslider({
+			$('#rangeplayer').rangeslider({
 			    polyfill : false,
 			    onInit : function() {
-			        this.output = $( '<div class="range-output" />' ).insertAfter( this.$range ).html( this.$element.val() );
+			        this.output = $( '<div class="range-output" />' ).insertAfter( $('#playnum') ).html( this.$element.val() );
 			    },
 			    onSlide : function( position, value ) {
 			        this.output.html( value );
 			    }
 			});
+            $('#rangeduration').rangeslider({
+                polyfill : false,
+                onInit : function() {
+                    this.output = $( '<div class="range-output" />' ).insertAfter( $('#duration') ).html( this.$element.val() + " secondi" );
+                },
+                onSlide : function( position, value ) {
+                    this.output.html( value + " secondi");
+                }
+            });
 		});
 		</script>
 	</body>

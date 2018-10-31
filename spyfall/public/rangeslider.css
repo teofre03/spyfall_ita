@@ -9,9 +9,15 @@
   border-radius: 10px;
 }
 
+.range-output{
+    display: inline-block;
+    margin-left: 10px;
+}
+
 .rangeslider {
   background: #e6e6e6;
   position: relative;
+  margin-top: 20px;
 }
 
 .rangeslider--horizontal {

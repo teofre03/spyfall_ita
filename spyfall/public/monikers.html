@@ -51,7 +51,7 @@
 		    var stop = false;
 
 		    $.ajax({
-		        url: "https://raw.githubusercontent.com/teofre03/spyfall_ita/master/spyfall/public/monikers.csv",
+		        url: "monikers.csv", // url: "https://raw.githubusercontent.com/teofre03/spyfall_ita/master/spyfall/public/monikers.csv",
 		        async: false,
 		        success: function (csvd) {
 		            cards = $.csv.toArrays(csvd);
