@@ -81,7 +81,8 @@
             // Recupera la carta successiva e la mostra
             var currentCard = remainingCards[currentCardIndex];
             $('#title').text(currentCard[0]);
-            if(currentCard[1].includes('http://') || currentCard[1].includes('htts://') || currentCard[1].includes('.jpg')){
+            var description = currentCard[1];
+            if(description.includes('http://') || description.includes('https://') || description.includes('.jpg') || description.includes('.jpeg') || description.includes('.png')){
                 $('#description').html("<img src='" + currentCard[1] + "' height='auto' width='180'>");
             } else {
                 $('#description').html(currentCard[1]);
