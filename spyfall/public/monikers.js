@@ -1,3 +1,24 @@
+    function afterLoadCsv(){
+        // Imposta il numero di giocatori ed il tempo del turno in base ai parametri
+        var query = location.search.replace('?', '');
+        if(query != ""){
+            var params = parse_query_string(query);
+            if(params["players"] !== undefined){
+                players = parseInt(params["players"]);
+            }
+            if(params["time"] !== undefined){
+                roundTime = parseInt(params["time"]);
+            }
+        }
+        // Mischia le carte e sceglie la prima
+        cards = shuffle(cards);
+        if(players*5 < cards.length){
+            cards = cards.slice(0,players*5);
+        }
+        remainingCards = cards.slice();
+        setRoundInfo();
+    }
+
     // Mischia l'array passato come parametro
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;

@@ -35,9 +35,9 @@
 		</div>
 		<script>
 		    var roundInfo = [
-		        "<br>ROUND 1:<br>Puoi usare ogni parola, suono o gesto tranne il nome stesso, puoi usare anche il testo sulla carta. Se dici una parte qualsiasi del nome, devi saltare quella carta.",
-		        "<br>ROUND 2:<br>Usa una sola parola, che può essere qualsiasi cosa tranne il nome stesso. Puoi ripetere quella parola quante volte vuoi, ma non puoi fare gesti o suoni.",
-		        "<br>ROUND 3:<br>Solo mimando. Nessuna parola e gli effetti sonori non sono consentiti."];
+		        "<b>ROUND 1:</b><br><br>Puoi usare ogni parola, suono o gesto tranne il nome stesso, puoi usare anche il testo sulla carta. Se dici una parte qualsiasi del nome, devi saltare quella carta.",
+		        "<b>ROUND 2:</b><br><br>Usa una sola parola, che può essere qualsiasi cosa tranne il nome stesso. Puoi ripetere quella parola quante volte vuoi, ma non puoi fare gesti o suoni.",
+		        "<b>ROUND 3:</b><br><br>Solo mimando. Nessuna parola e gli effetti sonori non sono consentiti."];
 		    var round = 1;
 		    var cards = [];
 		    var remainingCards = [];
@@ -58,25 +58,23 @@
 		        },
 		        dataType: "text",
 		        complete: function () {
-		            // Imposta il numero di giocatori ed il tempo del turno in base ai parametri
-		            var query = location.search.replace('?', '');
-		            if(query != ""){
-		                var params = parse_query_string(query);
-		                if(params["players"] !== undefined){
-		                    players = parseInt(params["players"]);
-		                }
-		                if(params["time"] !== undefined){
-		                    roundTime = parseInt(params["time"]);
-		                }
-		            }
-		            // Mischia le carte e sceglie la prima
-		            cards = shuffle(cards);
-		            if(players*5 < cards.length){
-		                cards = cards.slice(0,players*5);
-		            }
-		            remainingCards = cards.slice();
-		            setRoundInfo();
-		        }
+		            afterLoadCsv();
+		        },
+                error: function () {
+                    $.ajax({
+                        url: "https://raw.githubusercontent.com/teofre03/spyfall_ita/master/spyfall/public/monikers.csv",
+                        async: false,
+                        success: function (csvd) {
+                            cards = $.csv.toArrays(csvd);
+                        },
+                        dataType: "text",
+                        complete: function () {
+                            afterLoadCsv();
+                        },
+                        error: function () {
+                        }
+                    });
+                }
 		    });
 		</script>
 	</body>

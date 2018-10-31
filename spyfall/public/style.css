@@ -73,7 +73,7 @@ body {
         height: 266px;
         text-align: center;
         white-space: normal;
-        font-size: 12px;
+        font-size: 13px;
         flex-wrap: wrap;
         margin-left: 35px;
         margin-right: 35px;
@@ -164,13 +164,15 @@ body {
     }
     #skipButton{
         display: none;
-        background-color: #b3b3b3;
+        background-color: #ff9800;
         cursor: pointer;
+        color: white;
     }
     #correctButton{
         display: none;
-        background-color: #00d81b;
+        background-color: #4caf50;
         cursor: pointer;
+        color: white;
     }
     progress[value] {
       /* Reset the default appearance */
