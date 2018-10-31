@@ -81,7 +81,11 @@
             // Recupera la carta successiva e la mostra
             var currentCard = remainingCards[currentCardIndex];
             $('#title').text(currentCard[0]);
-            $('#description').text(currentCard[1]);
+            if(currentCard[1].includes('http://') || currentCard[1].includes('htts://') || currentCard[1].includes('.jpg')){
+                $('#description').html("<img src='" + currentCard[1] + "' height='auto' width='180'>");
+            } else {
+                $('#description').html(currentCard[1]);
+            }
             $('#points').text(currentCard[2]);
             $('#points-box').css("background-color", getColor(parseInt(currentCard[2])));
         }
