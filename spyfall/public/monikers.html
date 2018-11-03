@@ -96,7 +96,7 @@
 		                        success: function (csvdnsfw) {
 		                            nsfw = $.csv.toArrays(csvdnsfw);
 		                            $.ajax({
-				                        url: "images.csv",
+				                        url: "https://raw.githubusercontent.com/teofre03/spyfall_ita/master/spyfall/public/images.csv",
 				                        async: false,
 				                        success: function (csvdimages) {
 				                            images = $.csv.toArrays(csvdimages);
@@ -111,9 +111,6 @@
 				                    });
 		                        },
 		                        dataType: "text",
-		                        complete: function () {
-		                            afterLoadCsv();
-		                        },
 		                        error: function () {
 		                        	afterLoadCsv();
 		                        }

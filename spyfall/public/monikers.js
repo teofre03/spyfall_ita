@@ -17,7 +17,10 @@
             }
         }
         // Mischia le carte e sceglie la prima
-        cards = shuffle(cards);
+        var shuffleNumber = Math.floor(Math.random() * 100)+1;
+        for(var i=0; i<shuffleNumber; i++){
+            cards = shuffle(cards);
+        }
         if(players*5 < cards.length){
             cards = cards.slice(0,players*5);
         }
