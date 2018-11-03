@@ -40,6 +40,8 @@
 		        "<b>ROUND 3:</b><br><br>Solo mimando. Nessuna parola e gli effetti sonori non sono consentiti."];
 		    var round = 1;
 		    var cards = [];
+		    var nsfw = [];
+		    var images = [];
 		    var remainingCards = [];
 		    var currentCardIndex = -1;
 		    var points = [0,0];
@@ -55,22 +57,69 @@
 		        async: false,
 		        success: function (csvd) {
 		            cards = $.csv.toArrays(csvd);
+		            $.ajax({
+                        url: "nsfw.csv",
+                        async: false,
+                        success: function (csvdnsfw) {
+                            nsfw = $.csv.toArrays(csvdnsfw);
+                            $.ajax({
+		                        url: "images.csv",
+		                        async: false,
+		                        success: function (csvdimages) {
+		                            images = $.csv.toArrays(csvdimages);
+		                        },
+		                        dataType: "text",
+		                        complete: function () {
+		                            afterLoadCsv();
+		                        },
+		                        error: function () {
+		                        	afterLoadCsv();
+		                        }
+		                    });
+                        },
+                        dataType: "text",
+                        error: function () {
+                        	afterLoadCsv();
+                        }
+                    });
 		        },
 		        dataType: "text",
-		        complete: function () {
-		            afterLoadCsv();
-		        },
                 error: function () {
                     $.ajax({
                         url: "https://raw.githubusercontent.com/teofre03/spyfall_ita/master/spyfall/public/monikers.csv",
                         async: false,
                         success: function (csvd) {
                             cards = $.csv.toArrays(csvd);
+                            $.ajax({
+		                        url: "https://raw.githubusercontent.com/teofre03/spyfall_ita/master/spyfall/public/nsfw.csv",
+		                        async: false,
+		                        success: function (csvdnsfw) {
+		                            nsfw = $.csv.toArrays(csvdnsfw);
+		                            $.ajax({
+				                        url: "images.csv",
+				                        async: false,
+				                        success: function (csvdimages) {
+				                            images = $.csv.toArrays(csvdimages);
+				                        },
+				                        dataType: "text",
+				                        complete: function () {
+				                            afterLoadCsv();
+				                        },
+				                        error: function () {
+				                        	afterLoadCsv();
+				                        }
+				                    });
+		                        },
+		                        dataType: "text",
+		                        complete: function () {
+		                            afterLoadCsv();
+		                        },
+		                        error: function () {
+		                        	afterLoadCsv();
+		                        }
+		                    });
                         },
                         dataType: "text",
-                        complete: function () {
-                            afterLoadCsv();
-                        },
                         error: function () {
                         }
                     });

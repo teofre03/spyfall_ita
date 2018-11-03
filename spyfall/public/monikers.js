@@ -9,6 +9,12 @@
             if(params["time"] !== undefined){
                 roundTime = parseInt(params["time"]);
             }
+            if(params["nsfw"] !== undefined){
+                addNsfw();
+            }
+            if(params["images"] !== undefined){
+                addImages();
+            }
         }
         // Mischia le carte e sceglie la prima
         cards = shuffle(cards);
@@ -17,6 +23,14 @@
         }
         remainingCards = cards.slice();
         setRoundInfo();
+    }
+
+    function addNsfw(){
+       cards = cards.concat(nsfw); 
+    }
+
+    function addImages(){
+        cards = cards.concat(images); 
     }
 
     // Mischia l'array passato come parametro
